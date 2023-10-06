@@ -13,7 +13,7 @@ library(here)
 #---- Access the ODK CENTRAL and read in the household listing data ----
 
 # FIRST, run the separate script that contains your credentials:
-source("PRATICA_ODKC_MOZ_MIS_MAIN_CREDENTIALS.R")
+source("pratica/PRATICA_ODKC_MOZ_MIS_MAIN_CREDENTIALS.R")
 
 # ODK Central's OData URL contains base URL, project ID, and form ID
 # ODK Central credentials can live in .Renviron
@@ -171,7 +171,7 @@ dfs <- list(hh = hh, hhm = hhm, nets = nets, women = women, births = births, bir
 dataframe_list <- lapply(dfs, as.data.frame)
 
 # Export csv copies of the raw data
-walk2(dataframe_list, paste0("raw/", names(dataframe_list), ".csv"), write_csv)
+walk2(dataframe_list, paste0("pratica/raw/", names(dataframe_list), ".csv"), write_csv)
 
 
 
