@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.5.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.612255800000000" minlon="32.666905900000003" maxlat="-25.606783300000000" maxlon="32.670973799999999"/></metadata>                
+<wpt lat="-25.6105637" lon="32.6694453">
+  <extensions>
+    <ogr:ID>10050903317</ogr:ID>
+    <ogr:NameHH>Isabel</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6105084" lon="32.670809">
+  <extensions>
+    <ogr:ID>10050903319</ogr:ID>
+    <ogr:NameHH>Eugeni Rodrigues</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6102433" lon="32.669795">
+  <extensions>
+    <ogr:ID>10050905511</ogr:ID>
+    <ogr:NameHH>Simon Cossa</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6111789" lon="32.670271">
+  <extensions>
+    <ogr:ID>10050903302</ogr:ID>
+    <ogr:NameHH>Luisa Mulungo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6115579" lon="32.6707557">
+  <extensions>
+    <ogr:ID>10050903300</ogr:ID>
+    <ogr:NameHH>Lucia Langa</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6104941" lon="32.6686611">
+  <extensions>
+    <ogr:ID>10050903311</ogr:ID>
+    <ogr:NameHH>Adelia chirindza</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6074631" lon="32.6704515">
+  <extensions>
+    <ogr:ID>10050902207</ogr:ID>
+    <ogr:NameHH>Bernardo Malo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6067833" lon="32.668385">
+  <extensions>
+    <ogr:ID>10050907701</ogr:ID>
+    <ogr:NameHH>Sonia Amido</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6093271" lon="32.6669059">
+  <extensions>
+    <ogr:ID>10050901113</ogr:ID>
+    <ogr:NameHH>Geraldo Alberto zandamela</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.609635" lon="32.6691483">
+  <extensions>
+    <ogr:ID>10050905507</ogr:ID>
+    <ogr:NameHH>Elsa Jorge Fumo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.611915" lon="32.6691049">
+  <extensions>
+    <ogr:ID>10050903305</ogr:ID>
+    <ogr:NameHH>Paulo Duce</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.610811" lon="32.6690441">
+  <extensions>
+    <ogr:ID>10050903309</ogr:ID>
+    <ogr:NameHH>Graça Amiel</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6103933" lon="32.6694567">
+  <extensions>
+    <ogr:ID>10050905513</ogr:ID>
+    <ogr:NameHH>Feliz Ernesto Mabui</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.610125" lon="32.6697283">
+  <extensions>
+    <ogr:ID>10050905512</ogr:ID>
+    <ogr:NameHH>Magaia </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6108051" lon="32.6680592">
+  <extensions>
+    <ogr:ID>10050903314</ogr:ID>
+    <ogr:NameHH>Tristeza Jaime</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6122558" lon="32.6699399">
+  <extensions>
+    <ogr:ID>10050903303</ogr:ID>
+    <ogr:NameHH>Sergio Olimpio</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6112907" lon="32.6709738">
+  <extensions>
+    <ogr:ID>10050907712</ogr:ID>
+    <ogr:NameHH>Sidonio Magai</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6112511" lon="32.6691265">
+  <extensions>
+    <ogr:ID>10050903307</ogr:ID>
+    <ogr:NameHH>Zilda Manhiça</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.611452" lon="32.6689706">
+  <extensions>
+    <ogr:ID>10050903306</ogr:ID>
+    <ogr:NameHH>Rita Mulungo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6101372" lon="32.668547">
+  <extensions>
+    <ogr:ID>10050905505</ogr:ID>
+    <ogr:NameHH>Felismina Alberto Mondlane</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6088752" lon="32.6689463">
+  <extensions>
+    <ogr:ID>10050906610</ogr:ID>
+    <ogr:NameHH>Biamungo Bonifassiu</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6068151" lon="32.6702511">
+  <extensions>
+    <ogr:ID>10050902214</ogr:ID>
+    <ogr:NameHH>Nilza Miriamo Taela</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6067973" lon="32.6703864">
+  <extensions>
+    <ogr:ID>10050902215</ogr:ID>
+    <ogr:NameHH>Albertina Bandze</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6092797" lon="32.6673739">
+  <extensions>
+    <ogr:ID>10050901104</ogr:ID>
+    <ogr:NameHH>Luciano  Augosto Zulo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.609064" lon="32.6671227">
+  <extensions>
+    <ogr:ID>10050904409</ogr:ID>
+    <ogr:NameHH>Francisco Armando Ouana</ogr:NameHH>
+  </extensions>
+</wpt>
+</gpx>

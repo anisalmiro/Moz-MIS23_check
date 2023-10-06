@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.5.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.587457900000000" minlon="32.639837600000000" maxlat="-25.580117699999999" maxlon="32.648969000000001"/></metadata>                
+<wpt lat="-25.5833302" lon="32.6449741">
+  <extensions>
+    <ogr:ID>10050707709</ogr:ID>
+    <ogr:NameHH>Crimilda Romao</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5836249" lon="32.6445947">
+  <extensions>
+    <ogr:ID>10050707710</ogr:ID>
+    <ogr:NameHH>Romao Paulino langa</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5841354" lon="32.6468605">
+  <extensions>
+    <ogr:ID>10050606505</ogr:ID>
+    <ogr:NameHH>Timoteo  Moseis</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5830882" lon="32.6420264">
+  <extensions>
+    <ogr:ID>10050701108</ogr:ID>
+    <ogr:NameHH>Narciso chauque </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.58661" lon="32.6468817">
+  <extensions>
+    <ogr:ID>10050706603</ogr:ID>
+    <ogr:NameHH>Benedito metodio</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5821355" lon="32.6406322">
+  <extensions>
+    <ogr:ID>10050701106</ogr:ID>
+    <ogr:NameHH>Adelina  paulino </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5836767" lon="32.6430367">
+  <extensions>
+    <ogr:ID>10050706610</ogr:ID>
+    <ogr:NameHH>Argentina  neves</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5870952" lon="32.6488147">
+  <extensions>
+    <ogr:ID>10050703300</ogr:ID>
+    <ogr:NameHH>Goncalves Houana</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5827822" lon="32.6464162">
+  <extensions>
+    <ogr:ID>10050702211</ogr:ID>
+    <ogr:NameHH>Horácio Muleva</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5801177" lon="32.6398376">
+  <extensions>
+    <ogr:ID>10050701101</ogr:ID>
+    <ogr:NameHH>Matilde Fernando  nhabombe</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5870517" lon="32.647335">
+  <extensions>
+    <ogr:ID>10050706600</ogr:ID>
+    <ogr:NameHH>Manuel saranga</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5844017" lon="32.6424267">
+  <extensions>
+    <ogr:ID>10050706608</ogr:ID>
+    <ogr:NameHH>Amaral jonas matsinhe</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5842959" lon="32.6477119">
+  <extensions>
+    <ogr:ID>10050606508</ogr:ID>
+    <ogr:NameHH>Cacilda Luis Bila</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5849153" lon="32.6432516">
+  <extensions>
+    <ogr:ID>10050704409</ogr:ID>
+    <ogr:NameHH>Mario Manuel </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5831374" lon="32.6462021">
+  <extensions>
+    <ogr:ID>10050707705</ogr:ID>
+    <ogr:NameHH>Elisa Fernando Honwana</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5831223" lon="32.6466155">
+  <extensions>
+    <ogr:ID>10050702209</ogr:ID>
+    <ogr:NameHH>Fabiao Mabote</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5852648" lon="32.648969">
+  <extensions>
+    <ogr:ID>10050703307</ogr:ID>
+    <ogr:NameHH>Teresa Mbaguene</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5860167" lon="32.6471367">
+  <extensions>
+    <ogr:ID>10050606500</ogr:ID>
+    <ogr:NameHH>Maria Jaime Novele</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5835885" lon="32.6462717">
+  <extensions>
+    <ogr:ID>10050702205</ogr:ID>
+    <ogr:NameHH>Eduardo Dgedge</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.582436" lon="32.643272">
+  <extensions>
+    <ogr:ID>10050707713</ogr:ID>
+    <ogr:NameHH>Ana Rita Alberto  Majendje</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5813998" lon="32.6450832">
+  <extensions>
+    <ogr:ID>10050611014</ogr:ID>
+    <ogr:NameHH>Daniel Hohwana</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5874579" lon="32.6468192">
+  <extensions>
+    <ogr:ID>10050704402</ogr:ID>
+    <ogr:NameHH>Gertrudes Alson </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5841567" lon="32.6479591">
+  <extensions>
+    <ogr:ID>10050606509</ogr:ID>
+    <ogr:NameHH>Zaida Guambe</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5859417" lon="32.6472594">
+  <extensions>
+    <ogr:ID>10050606501</ogr:ID>
+    <ogr:NameHH>Isidio Zacarias Nhabindi</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.5835826" lon="32.6456441">
+  <extensions>
+    <ogr:ID>10050707701</ogr:ID>
+    <ogr:NameHH>Horácio salomao zocorro Nhalicale</ogr:NameHH>
+  </extensions>
+</wpt>
+</gpx>

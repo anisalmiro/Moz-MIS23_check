@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.5.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.604981100000000" minlon="32.646906700000002" maxlat="-25.601883000000001" maxlon="32.655765199999998"/></metadata>                
+<wpt lat="-25.6038917" lon="32.6483017">
+  <extensions>
+    <ogr:ID>10050403313</ogr:ID>
+    <ogr:NameHH>Manucha Moniz</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6035317" lon="32.6483602">
+  <extensions>
+    <ogr:ID>10050403314</ogr:ID>
+    <ogr:NameHH>Voctoria Vicente Muchanga</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.604078" lon="32.6557652">
+  <extensions>
+    <ogr:ID>10050405501</ogr:ID>
+    <ogr:NameHH>Saquina Paulo sambo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6028766" lon="32.6469502">
+  <extensions>
+    <ogr:ID>10050402207</ogr:ID>
+    <ogr:NameHH>Venâncio Cumbe</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.60226" lon="32.6480217">
+  <extensions>
+    <ogr:ID>10050403302</ogr:ID>
+    <ogr:NameHH>Alzira Pedro Novele</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.601883" lon="32.6469067">
+  <extensions>
+    <ogr:ID>10050402200</ogr:ID>
+    <ogr:NameHH>Manuel Gaspar</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6037921" lon="32.6492788">
+  <extensions>
+    <ogr:ID>10050401103</ogr:ID>
+    <ogr:NameHH>Carla Machava</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6028847" lon="32.6496218">
+  <extensions>
+    <ogr:ID>10050406600</ogr:ID>
+    <ogr:NameHH>Maria singane</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6027138" lon="32.654846">
+  <extensions>
+    <ogr:ID>10050409904</ogr:ID>
+    <ogr:NameHH>Josefa Lidia Sambo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6027544" lon="32.64773">
+  <extensions>
+    <ogr:ID>10050404408</ogr:ID>
+    <ogr:NameHH>Manuel Guicamba</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6039067" lon="32.653585">
+  <extensions>
+    <ogr:ID>10050405505</ogr:ID>
+    <ogr:NameHH>Orlantino cumba</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6049811" lon="32.6556731">
+  <extensions>
+    <ogr:ID>10050405509</ogr:ID>
+    <ogr:NameHH>Makeil beto inacio macuacua</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6026498" lon="32.6486739">
+  <extensions>
+    <ogr:ID>10050406612</ogr:ID>
+    <ogr:NameHH>Juliana Azalf</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.602295" lon="32.6510883">
+  <extensions>
+    <ogr:ID>10050408804</ogr:ID>
+    <ogr:NameHH>Reginaldo Augusto Guirrugo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6045633" lon="32.6528317">
+  <extensions>
+    <ogr:ID>10050407706</ogr:ID>
+    <ogr:NameHH>Artur Xavier</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6037833" lon="32.6477633">
+  <extensions>
+    <ogr:ID>10050403309</ogr:ID>
+    <ogr:NameHH>LUCIA SIMAO</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6022331" lon="32.6548227">
+  <extensions>
+    <ogr:ID>10050409903</ogr:ID>
+    <ogr:NameHH>Carlos</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6039833" lon="32.6487817">
+  <extensions>
+    <ogr:ID>10050401112</ogr:ID>
+    <ogr:NameHH>Chicken Francisco</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6043974" lon="32.6556181">
+  <extensions>
+    <ogr:ID>10050405503</ogr:ID>
+    <ogr:NameHH>Emilia davide Magubo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6040296" lon="32.6554683">
+  <extensions>
+    <ogr:ID>10050405500</ogr:ID>
+    <ogr:NameHH>Feliciano Magaia</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.602075" lon="32.6519383">
+  <extensions>
+    <ogr:ID>10050408800</ogr:ID>
+    <ogr:NameHH>Jose Saquina Macuacua</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6024483" lon="32.6482767">
+  <extensions>
+    <ogr:ID>10050403316</ogr:ID>
+    <ogr:NameHH>JULIO FILIPE MASSANGO</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6047742" lon="32.6537334">
+  <extensions>
+    <ogr:ID>10050405507</ogr:ID>
+    <ogr:NameHH>Joao Pedro monteiro</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.604532" lon="32.653263">
+  <extensions>
+    <ogr:ID>10050405506</ogr:ID>
+    <ogr:NameHH>Vanda Mandjate</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.6033479" lon="32.6472143">
+  <extensions>
+    <ogr:ID>10050404406</ogr:ID>
+    <ogr:NameHH>Vlodio Cangela</ogr:NameHH>
+  </extensions>
+</wpt>
+</gpx>
