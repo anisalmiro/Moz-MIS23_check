@@ -1,0 +1,462 @@
+---
+title: "MIS data checks"
+author: "Eleanore Sternberg"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+#---- Load libraries (each time R restarts)
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(sf)
+library(openxlsx)
+library(ggrepel)
+library(here)
+library(lubridate)
+library(flextable)
+library(officer)
+library(labelled)
+library(haven)
+
+#---- Knitr options
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r getdata}
+#--- Read in the raw data dumped into the "raw" folder by the script that pulls from the ODK server
+# It is set up this way to avoid having to pull from the server every time we knit
+
+hh <- read.csv(here("raw/hh.csv"))
+hhm <- read.csv(here("raw/hhm.csv"))
+women <- read.csv(here("raw/women.csv"))
+births <- read.csv(here("raw/births.csv"))
+#birthcheck <- read.csv(here("raw/birthcheck.csv"))
+fever <- read.csv(here("raw/fever.csv"))
+biomarkers <- read.csv(here("raw/biomarkers.csv"))
+nets <- read.csv(here("raw/nets.csv"))
+
+# Set up small dataframe with hh details to add to other datasets
+tb <- hh %>% select(id, surveyor_id, area, local, hh_nb, hh_id_field, date_today) %>%
+  rename(submissions_id = id) # rename uuid to match the names in the repeat dataframes
+tb$date_today <- as.Date(ymd_hms(tb$date_today))  # Fix date format
+
+```
+
+# Household data
+
+```{r hhcheck}
+#---- Household checks -----
+hh_check <- hhraw %>% 
+  mutate(starttime=as_datetime(start_survey),
+         endtime=as_datetime(end_survey),
+         startdate=date(starttime),
+         enddate=date(endtime)) 
+
+hh_check %>%  
+  tabyl(startdate) 
+hh_check %>% 
+  tabyl(enddate)
+
+# Check interviewer numbers
+hhraw %>% tabyl(g1_id_teaminfo_g_surveyor_id)
+hhraw %>% tabyl(g1_id_hhinfo_g_area)
+hhraw %>% tabyl(g1_id_hhingo)
+
+# Check duplicate hhids
+dupes <- hh_check %>%
+  filter(startdate>"2023-10-3") %>% 
+  group_by(g1_id_hhinfo_g_hh_id_field) %>%
+  filter(n()>1) %>%
+  ungroup()
+
+# Check head of household names in the duplicate HHIDs
+dupes %>% tabyl(g1_id_hhinfo_g_hhh)
+
+# Check # of mosq nets
+hhraw %>% tabyl(hh_quest_nets_g_mosqnet_g_nb_mosq_nets)
+
+hhraw %>% tabyl(hh_quest_nets_g_nonet_g_no_net_reason_other)
+
+hhraw %>% tabyl(conclusion_g_final_comments)
+
+# Does surveyor ID digit line up with hh ID number - problem with tablets going backwards/forwards
+
+
+```
+
+
+# Household members
+
+```{r hhmcheck}
+
+#----- Household Member Checks ----
+
+hhmraw %>% tabyl(sex)
+hhmraw %>% tabyl(live)
+hhmraw %>% tabyl(age) # maybe an age pyramid? Check for 98s
+hhmraw %>% tabyl(fever)
+hhmraw %>% tabyl(travel_travel)
+
+```
+
+
+
+# Fever
+
+```{r fevars}
+#fever <- read.csv(here("raw/fever.csv"))
+# Join with hh deets
+fever <- left_join(fever, tb, by = "submissions_id")
+# Remove Sunrise data
+fever <- fever %>% filter(date_today > as.Date("2023-10-02"))
+
+# Swap out some numbers for words
+fever <- fever %>%
+  mutate(seek_tx = case_when(fever_treatment == 1 ~ "Sim",
+                             fever_treatment == 0 ~ "Não",
+                             fever_treatment == 8 ~ "Não sabe",
+                             TRUE ~ as.character(fever_treatment)),
+         loc_tx = case_when(treatment_place == 1 ~ "Hospital central",
+                            treatment_place == 2 ~ "Hospital provincial",
+                            treatment_place == 3 ~ "Hospital distrital/rural",
+                            treatment_place == 4 ~ "Centro/posto de saúde",
+                            treatment_place == 5 ~ "Brigadas moveis",
+                            treatment_place == 6 ~ "Farmácia",
+                            treatment_place == 7 ~ "APE",
+                            treatment_place == 8 ~ "Hospital/clinica privada",
+                            treatment_place == 9 ~ "Farmácia privada",
+                            treatment_place == 10 ~ "Médico privado",
+                            treatment_place == 11 ~ "Mercado/dumba nengue",
+                            treatment_place == 12 ~ "Médico trad",
+                            treatment_place == 13 ~ "Amigos/parentes",
+                            treatment_place == 96 ~ "Outro",
+                            TRUE ~ as.character(treatment_place)),
+         loc_tx = fct_expand(loc_tx, "Hospital central", "Hospital provincial", "Hospital distrital/rural", "Centro/posto de saúde", "Brigadas moveis", "Farmácia", "APE", "Hospital/clinica privada", "Farmácia privada", "Médico privado", "Mercado/dumba nengue", "Médico trad", "Amigos/parentes", "Outro"),
+         why_notx = case_when(no_treatment_reason == 1 ~ "Não estava disponível",
+                          no_treatment_reason == 2 ~ "É caro demais",
+                          no_treatment_reason == 3 ~ "É muito distante",
+                          no_treatment_reason == 4 ~ "Não havia transporte",
+                          no_treatment_reason == 5 ~ "Tinha muito trabalho",
+                          no_treatment_reason == 6 ~ "A febre não era grave",
+                          no_treatment_reason == 7 ~ "Não tinha permissão",
+                          no_treatment_reason == 96 ~ "Outro",
+                          TRUE ~ as.character(no_treatment_reason)),
+         why_notx = fct_expand(why_notx, "Não estava disponível", "É caro demais", "Não havia transporte", "Tinha muito trabalho", "A febre não era grave", "Não tinha permissão", "Outro"),
+         mal_test = case_when(test_malaria == 1 ~ "Sim",
+                              test_malaria == 0 ~ "Não",
+                              test_malaria == 8 ~ "Não sabe",
+                              TRUE ~ as.character(test_malaria)),
+         mal_result = case_when(result_malaria == 1 ~ "Positivo",
+                                result_malaria == 2 ~ "Negativo",
+                                result_malaria == 8 ~ "Não sabe",
+                                TRUE ~ as.character(result_malaria)),
+         meds_yn = case_when(medication == 1 ~ "Sim",
+                             medication == 0 ~ "Não",
+                             medication == 8 ~ "Não sabe",
+                             TRUE ~ as.character(result_malaria)))
+
+# Separate multiple choice var; this is janky AF there must be a better way...
+fevexp = fever %>% mutate(medication_type = strsplit(medication_type, " ")) %>% 
+  unnest(medication_type) %>% # Split up using space as seperator 
+  mutate(medication_type = paste0("med_", medication_type),  # Add med_ prefix so var names won't cause pain
+         medication_type = fct_expand(medication_type, "med_1", "med_2", "med_3", "med_4", "med_5", "med_6", "med_7", "med_8", "med_9", "med_10", "med_11", "med_12", "med_13", "med_14", "med_96", "med_98", "med_NA"), # add all factor levels (even ones that aren't in the data)
+         count = 1) %>% # Create a count var that indicates that response was present in the data
+  select(id, medication_type, count) %>% # Select only relevant vars
+  complete(id, medication_type) %>% # Now add in rows for empty levels
+  replace(is.na(.), 0) %>% # Replace NAs with 0
+  pivot_wider(names_from = medication_type, values_from = count) %>% # Pivot wider
+  select(id, med_1, med_2, med_3, med_4, med_5, med_6, med_7, med_8, med_9, med_10, med_11, med_12, med_13, med_14, med_96, med_98) # Can drop the NA here
+
+# 1	= Artemisinin-based combination therapy (tca/coartem)
+# 2	=	Sp/fansidar
+# 3	=	Chloroquine
+# 4	=	Amodiaquine
+# 5	=	Quinine met
+# 6	=	Quinine injection/iv
+# 7	=	Suppository artesunate
+# 8	=	Artesunate injection/iv
+# 9	=	Another anti-malarial
+# 10 =	Antibiotics pill/syrup
+# 11	=	Injection/iv antibiotics
+# 12	=	Other Aspirin Medications
+# 13	=	Other paracetemol medicines
+# 14	=	Other ibuprofen medications
+# 96	=	Other
+# 98	=	Do not know
+
+# Add back into data  
+fever <- left_join(fever, fevexp, by = "id")
+# Remove the temp stuff
+rm(fevexp)
+
+```
+
+```{r fevcheck}
+
+#--- Data quality check
+# If sought treatment, location of treatment
+fever %>% tabyl(seek_tx, loc_tx)
+# Did they have a malaria test if they didn't seek treatment?
+fever %>% tabyl(seek_tx, mal_test)
+# If tested for malaria, is there a result?
+fever %>% tabyl(mal_test, mal_result)
+
+```
+
+# Did those with fever seek treatment?
+
+```{r fevtx}
+# Freq table
+sttx <- fever %>% tabyl(seek_tx) %>%
+  mutate(percent = percent*100)
+
+# Plot
+ggplot(sttx, aes(x = seek_tx, y = percent, fill = seek_tx)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("n =", n, sep = " "), vjust = -0.5)) +
+  ylim(0, 100) +
+  labs(title = "Seek advice or treatment for fever",
+       x = NULL,
+       fill = NULL) +
+  theme_minimal()
+
+```
+
+# If sought treatment, where did they seek treatment? 
+
+```{r seektx}
+# Where did you seek treatment responses
+whtx <- fever %>% filter(seek_tx == "Sim") %>% tabyl(loc_tx) %>%
+  mutate(percent = percent*100)
+
+ggplot(whtx, aes(x = loc_tx, y = percent, fill = loc_tx)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("n =", n, sep = " "), vjust = -0.5)) +
+  ylim(0, 100) +
+  labs(title = "Where was advice or treatment for fever sought?",
+       x = NULL,
+       fill = NULL) +
+  theme_minimal() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+
+```
+
+# If "other" for where they sought treatment, where did they go?
+
+```{r seekoth}
+# List other responses for where they sought treatment
+seekoth <- fever %>% tabyl(treatment_place_other) %>%
+  na.omit() %>%
+  select(treatment_place_other, n) %>%
+  rename(`Outro local` = treatment_place_other)
+
+flextable(seekoth) %>%
+  set_caption(caption = "Onde você procurou tratamento, especifique outros")
+
+```
+
+# If they didn't seek treatment, why not?
+
+```{r notx}
+why_notx <- fever %>% filter(seek_tx == "Não") %>% tabyl(why_notx) %>%
+  mutate(percent = percent*100)
+
+ggplot(why_notx, aes(x = why_notx, y = percent, fill = why_notx)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("n =", n, sep = " "), vjust = -0.5)) +
+  ylim(0, 100) +
+  labs(title = "Why did you not seek treatment?",
+       x = NULL,
+       fill = NULL) +
+  theme_minimal() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+# Reorder xaxis so other is at the end
+
+```
+
+# If other reason for not seeking treatment, what was it? 
+
+```{r notxoth}
+# List other responses for why didn't seek treatment
+notxoth <- fever %>% tabyl(no_treat_reason_other) %>%
+  na.omit() %>%
+  select(no_treat_reason_other, n) %>%
+  rename(Razão = no_treat_reason_other)
+
+flextable(notx) %>%
+  set_caption(caption = "Porque não procurou conselho ou tratamento?")
+
+```
+
+# How many reported being tested for malaria?
+
+```{r maltest}
+# Where did you seek treatment responses
+tested <- fever %>% tabyl(mal_test) %>%
+  mutate(percent = percent*100)
+
+ggplot(tested, aes(x = mal_test, y = percent, fill = mal_test)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("n =", n, sep = " "), vjust = -0.5)) +
+  ylim(0, 100) +
+  labs(title = "Did you have a malaria test?",
+       x = NULL,
+       fill = NULL) +
+  theme_minimal() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+# Reorder xaxis
+```
+
+# What was the positivity rate? 
+
+```{r postest}
+# Where did you seek treatment responses
+postest <- fever %>% filter(mal_test == "Sim") %>% tabyl(mal_result) %>%
+  mutate(percent = percent*100) 
+
+ggplot(postest, aes(x = mal_result, y = percent, fill = mal_result)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste("n =", n, sep = " "), vjust = -0.5)) +
+  ylim(0, 100) +
+  labs(title = "Malaria test results",
+       x = NULL,
+       fill = NULL) +
+  theme_minimal() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+# Reorder xaxis
+```
+
+# What medication did people report taking? 
+
+```{r meds}
+# Select just unique id and meds result
+meds <- fever %>% select(id, med_1, med_2, med_3, med_4, med_5, med_6, med_7, med_8, med_9, med_10, med_11, med_12, med_13, med_14, med_96, med_98) %>%
+  pivot_longer(!id, names_to = "medication", values_to = "count") %>%
+  mutate(medication = case_when(medication == "med_1" ~ "Artemisinin-based combination therapy (tca/coartem)",
+                                medication == "med_2" ~ "Sp/fansidar",
+                                medication == "med_3" ~ "Chloroquine",
+                                medication == "med_4" ~ "Amodiaquine",
+                                medication == "med_5" ~ "Quinine met",
+                                medication == "med_6" ~ "Quinine injection/iv",
+                                medication == "med_7" ~ "Suppository artesunate",
+                                medication == "med_8" ~ "Artesunate injection/iv",
+                                medication == "med_9" ~ "Another anti-malarial",
+                                medication == "med_10" ~ "Antibiotics pill/syrup",
+                                medication == "med_11" ~ "Injection/iv antibiotics",
+                                medication == "med_12" ~ "Other Aspirin Medications",
+                                medication == "med_13" ~ "Other paracetemol medicines",
+                                medication == "med_14" ~ "Other ibuprofen medications",
+                                medication == "med_96" ~ "Other",
+                                medication == "med_98" ~ "Do not know"))
+
+
+## Trying to get percentages for numbers
+meds <- meds %>% group_by(medication) %>%
+  summarize(Mean = mean(count, na.rm=TRUE))
+
+```
+
+
+# Women's questionnaire
+
+```{r wovars}
+#women <- read.csv(here("raw/women.csv"))
+# Join with hh deets
+women <- left_join(women, tb, by = "submissions_id")
+
+#--- Label variables
+# haven::zap_labels() can be used to drop labels
+# haven::as_factor() can be used to convert labelled variables to factors
+women$visit_w <- labelled(women$visit_w)
+women$school_yn <- labelled(women$school_yn, 
+                            c(Sim = 1, Não = 0), 
+                            label = "Ever attended school")
+women$school_lvl <- labelled(women$school_lvl, 
+                             c(`Nenhum` = 0, `Pré-escolar` = 1, `Alfabetização` = 2, `Primário EP1` = 3, `Primário EP2` = 4, `Secundário ESG1` = 5, `Secundário ESG2` = 6, `Técnico elementar` = 7, `Técnico básico` = 8, `Técnico médio` = 9, `For. de Professores Primários` = 10, `Bacharelato` = 11, `Licenciatura` = 12, `Mestrado` = 13, `Doutoramento/PHD` = 14, `Não sabe` = 98), 
+                             label = "Highest level of school attended")
+
+
+
+
+
+         school_lvl = case_when(school_lvl == 0 ~ "Nenhum",
+                                school_lvl == 1 ~ "Pré-escolar",
+                                school_lvl == 2 ~ "Alfabetização",
+                                school_lvl == 3 ~ "Primário EP1",
+                                school_lvl == 4 ~ "Primário EP2",
+                                school_lvl == 5 ~ "Secundário ESG1",
+                                school_lvl == 6 ~ "Secundário ESG2",
+                                school_lvl == 7 ~ "Técnico elementar",
+                                school_lvl == 8 ~ "Técnico básico",
+                                school_lvl == 9 ~ "Técnico médio",
+                                school_lvl == 10 ~ "For. de Professores Primários",
+                                school_lvl == 11 ~ "Bacharelato",
+                                school_lvl == 12 ~ "Licenciatura",
+                                school_lvl == 13 ~ "Mestrado",
+                                school_lvl == 14 ~ "Doutoramento/PHD"
+                                school_lvl == 98 ~ "Não sabe"),
+         test_reading = case_when(w_intro_g_testreading_test_reading == 1 ~ "Não pode ler",
+                                  w_intro_g_testreading_test_reading == 2 ~ "Pode ler uma parte da frase",
+                                  w_intro_g_testreading_test_reading == 3 ~ "Pode ler a frase inteira",
+                                  w_intro_g_testreading_test_reading == 4 ~ "Não há cartão com a lingua da inquirida",
+                                  w_intro_g_testreading_test_reading == 5 ~ "Cega/deficiência visual"),
+         kids = case_when(kids == 1 ~ "Sim",
+                          kids == 0 ~ "Não"),
+         kids_hh = case_when(kids_hh == 1 ~ "Sim"
+                             kids_hh == 0 ~ "Não"),
+         kids_out_hh = case_when(kids_out_hh == 1 ~ "Sim",
+                                 kids_out_hh == 0 ~ "Não"),
+         kids_dead = case_when(kids_dead == 1 ~ "Sim",
+                               kids_dead == 0 ~ "Não"),
+         sum_kids_yn = case_when(sum_kids_yn == 1 ~ "Sim",
+                                 sum_kids_yn == 0 ~ "Não"),
+         preg = case_when(preg == 1 ~ "Sim",
+                          preg == 0 ~ "Não"),
+         doc_preg = case_when(doc_preg == 0 ~ "Sim",
+                              doc_preg == 1 ~ "Não"),
+         )
+
+
+
+# Select multiples
+# Doc type
+
+
+```
+
+
+# Nets
+
+```{r netcheck}
+# Check net brands for missing
+nets %>% tabyl(brand_g_net_brand)
+
+# Check % of nets observed 
+nets %>% tabyl(statecolorshape_g_net_state)
+
+# Check % of nets used last night
+nets %>% tabyl(sleep_net)
+
+# Check why not net used
+nets %>% tabyl(no_sleep_net)
+
+# Check if interviewer put in 1234 for net users:
+nets_check <- nets %>% 
+  mutate(netusers1234=case_when(net_users_g_user1_nb==1 & net_users_g_user2_nb==2 & net_users_g_user3_nb==3 & net_users_g_user4_nb==4 ~ "wrong",
+         TRUE ~ "right"))
+nets_check %>% tabyl(netusers1234)
+
+# Check total # of nets in hh
+nets %>% 
+  group_by(submissions_id) %>% 
+  summarize(count=max(nets_pos)) %>% 
+  tabyl(count)
+
+```
+
+
+
