@@ -1,0 +1,6 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+dir_to_ignore/pratica/raw
+/pratica/PRATICA_ODKC_HH_LISTING_CREDENTIALS.R
