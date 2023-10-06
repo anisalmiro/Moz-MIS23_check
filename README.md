@@ -2,6 +2,8 @@
 
 This repo contains files to support the 2023 MIS in Mozambique. It is accessible only by the IT team supporting this activity, including Anisio, Muthambe, Eleanore, Hannah, and Matt.
 
+Gitignore file includes raw data that gets pulled from the ODK server and the credentials script used for pulling the data that includes username and password for access to the server.
+
 **Household Listing**
 
 Team in the field are tasked with visiting each household in the enumeration areas and reporting whether the household is present, the name of the head of household, and the members of the household. These data are recorded in Kobo collect and uploaded to the INS server.
