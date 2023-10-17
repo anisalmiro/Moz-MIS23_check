@@ -29,3 +29,13 @@ The main questionnaire produces six datasets (repeats within the ODK form). Thes
 -   Women's birth check youngest repeat (not used for analysis)
 
 -   Biomarker children data
+
+**R scripts**
+
+ODKC_HH_LISTING_CREDENTIALS: Listing credentials to pull the HH listing data off the ODK server
+
+HH_Selection_IIMS23: Randomly selected 25 households in each enumeration area, generate GPX, Excel list, and map with selected households that get fed back to field team
+
+ODKC_MOZ_MIS_MAIN_CREDENTIALS: Listing credentials to pull the survey data off the ODK server
+
+ODKC_Read: Pull survey data off ODK server, chop some of the variable names, dump as csv files in (hidden) raw data folder
