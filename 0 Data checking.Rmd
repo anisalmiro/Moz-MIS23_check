@@ -77,7 +77,7 @@ dupes %>% tabyl(hhh)
 # Check # of mosq nets
 hh %>% tabyl(nb_mosq_nets)
 
-hh %>% tabyl(nonet_g_no_net_reason_other)
+hh %>% tabyl(nonet_g_no_net_reason) 
 
 hh %>% tabyl(final_comments)
 
@@ -257,15 +257,23 @@ meds <- meds %>% group_by(medication) %>%
 
 ```
 
-
 # Women's questionnaire
 
-```{r wovars}
+```{r womencheck}
 #women <- read.csv(here("raw/women.csv"))
 # Join with hh deets
 women <- left_join(women, tb, by = "submissions_id")
 
+# Any duplicate women's id?
+dupes <- women %>%
+  group_by(women_id) %>%
+  filter(n()>1) %>%
+  ungroup()
 
+# Took SP/F during revent pregnancy?
+women %>% tabyl(birth_recent, preg_spf)
+# How many times did she report taking SP?
+hist(women$preg_spf_nb)
 
 ```
 

@@ -91,8 +91,9 @@ biomarkersraw <- ruODK::odata_submission_get(
 
 
 ## Remove columns that are empty:
+# Commented out dropping empty columns because it was causing issues with the checking script
 
-hh <- hhraw %>% remove_empty(which="cols", quiet=FALSE) %>% 
+hh <- hhraw %>% #remove_empty(which="cols", quiet=FALSE) %>% 
   rename_with(.fn = ~ tolower(gsub("g1_id_", "", .x, fixed = TRUE)), .col = starts_with("g1_id_")) %>% 
   rename_with(.fn = ~ tolower(gsub("teaminfo_g_", "", .x, fixed = TRUE)), .col = starts_with("teaminfo_g_")) %>% 
   rename_with(.fn = ~ tolower(gsub("geoinfo_g_", "", .x, fixed = TRUE)), .col = starts_with("geoinfo_g_")) %>% 
@@ -133,9 +134,9 @@ nets <- netsraw %>% remove_empty(which="cols", quiet=FALSE) %>%
   rename_with(.fn = ~ tolower(gsub("campaign_g_", "", .x, fixed = TRUE)), .col = starts_with("campaign_g_")) %>% 
   rename_with(.fn = ~ tolower(gsub("net_users_g_", "", .x, fixed = TRUE)), .col = starts_with("net_users_g_")) 
   
-fever <- feverraw %>% remove_empty(which="cols", quiet=FALSE)
+fever <- feverraw #%>% remove_empty(which="cols", quiet=FALSE)
 
-women <- womenraw %>% remove_empty(which="cols", quiet=FALSE) %>% 
+women <- womenraw %>% #remove_empty(which="cols", quiet=FALSE) %>% 
   rename_with(.fn = ~ tolower(gsub("w_intro_g_w_basic_info_g_", "", .x, fixed = TRUE)), .col = starts_with("w_intro_g_w_basic_info_g_")) %>% 
   rename_with(.fn = ~ tolower(gsub("w_intro_g_visitconsent_g_", "", .x, fixed = TRUE)), .col = starts_with("w_intro_g_visitconsent_g_")) %>% 
   rename_with(.fn = ~ tolower(gsub("w_intro_g_age_w_g_", "", .x, fixed = TRUE)), .col = starts_with("w_intro_g_age_w_g_")) %>% 
@@ -151,14 +152,14 @@ women <- womenraw %>% remove_empty(which="cols", quiet=FALSE) %>%
   # rename_with(.fn = ~ tolower(gsub("mal_affirm_", "", .x, fixed = TRUE)), .col = starts_with("mal_affirm_")) %>% 
   rename_with(.fn = ~ tolower(gsub("lang_g_", "", .x, fixed = TRUE)), .col = starts_with("lang_g_")) 
   
-births <- birthsraw %>% remove_empty(which="cols", quiet=FALSE) %>% 
+births <- birthsraw %>% #remove_empty(which="cols", quiet=FALSE) %>% 
   rename(u5id=under5_id) %>% 
   rename_with(.fn = ~ tolower(gsub("under5_", "", .x, fixed = TRUE)), .col = starts_with("under5_")) %>% 
   rename_with(.fn = ~ tolower(gsub("sexage_", "", .x, fixed = TRUE)), .col = starts_with("sexage_")) %>% 
   rename_with(.fn = ~ tolower(gsub("fever_under5_", "", .x, fixed = TRUE)), .col = starts_with("fever_under5_"))
   
-birthcheck <- birthcheckraw %>% remove_empty(which="cols", quiet=FALSE)
-biomarkers <- biomarkersraw %>% remove_empty(which="cols", quiet=FALSE) %>% 
+birthcheck <- birthcheckraw #%>% remove_empty(which="cols", quiet=FALSE)
+biomarkers <- biomarkersraw %>% #remove_empty(which="cols", quiet=FALSE) %>% 
   rename_with(.fn = ~ tolower(gsub("biom_basicinfo_", "", .x, fixed = TRUE)), .col = starts_with("biom_basicinfo_")) %>% 
   rename_with(.fn = ~ tolower(gsub("age_biom_g_", "", .x, fixed = TRUE)), .col = starts_with("age_biom_g_")) %>% 
   rename_with(.fn = ~ tolower(gsub("symptoms_g_", "", .x, fixed = TRUE)), .col = starts_with("symptoms_g_"))
