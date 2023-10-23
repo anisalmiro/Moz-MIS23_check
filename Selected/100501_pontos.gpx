@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.5.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.755158699999999" minlon="32.736474899999997" maxlat="-25.753120700000000" maxlon="32.740599799999998"/></metadata>                
+<wpt lat="-25.75509" lon="32.7389911">
+  <extensions>
+    <ogr:ID>10051104460</ogr:ID>
+    <ogr:NameHH>Lucia Muchanga</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7533084" lon="32.7405998">
+  <extensions>
+    <ogr:ID>10051403311</ogr:ID>
+    <ogr:NameHH>Gildio Gozales</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7543279" lon="32.7364749">
+  <extensions>
+    <ogr:ID>10053502205</ogr:ID>
+    <ogr:NameHH>David Botela</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7548183" lon="32.7381883">
+  <extensions>
+    <ogr:ID>10052011300</ogr:ID>
+    <ogr:NameHH>Manuel Jossias </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7531207" lon="32.7379013">
+  <extensions>
+    <ogr:ID>10053102201</ogr:ID>
+    <ogr:NameHH>Justino zango</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7548035" lon="32.738336">
+  <extensions>
+    <ogr:ID>10051104473</ogr:ID>
+    <ogr:NameHH>Joao Botela</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7550589" lon="32.738987">
+  <extensions>
+    <ogr:ID>10051104463</ogr:ID>
+    <ogr:NameHH>Raul dercio</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7551587" lon="32.7375793">
+  <extensions>
+    <ogr:ID>10053201103</ogr:ID>
+    <ogr:NameHH>Januario Cossa</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7541232" lon="32.74044">
+  <extensions>
+    <ogr:ID>10050603305</ogr:ID>
+    <ogr:NameHH>Maria Eugenia</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7546879" lon="32.7386674">
+  <extensions>
+    <ogr:ID>10051104471</ogr:ID>
+    <ogr:NameHH>Almanaque</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7544062" lon="32.7375636">
+  <extensions>
+    <ogr:ID>10053104404</ogr:ID>
+    <ogr:NameHH>Flora zihta</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7551483" lon="32.73826">
+  <extensions>
+    <ogr:ID>10053202205</ogr:ID>
+    <ogr:NameHH>Cesar Mafumo</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7547383" lon="32.7381983">
+  <extensions>
+    <ogr:ID>10051202231</ogr:ID>
+    <ogr:NameHH>Maria mutemba</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7546164" lon="32.7395127">
+  <extensions>
+    <ogr:ID>10052303305</ogr:ID>
+    <ogr:NameHH>Pères vumba</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7548362" lon="32.7386078">
+  <extensions>
+    <ogr:ID>10052603302</ogr:ID>
+    <ogr:NameHH>Antonio Carlos</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7546679" lon="32.7394651">
+  <extensions>
+    <ogr:ID>10052201105</ogr:ID>
+    <ogr:NameHH>Armmando</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7547983" lon="32.7381533">
+  <extensions>
+    <ogr:ID>10052011300</ogr:ID>
+    <ogr:NameHH>Manuel jossias</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7550416" lon="32.7381738">
+  <extensions>
+    <ogr:ID>10052604412</ogr:ID>
+    <ogr:NameHH>Arlindo Mbanguine </ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.754867" lon="32.7382573">
+  <extensions>
+    <ogr:ID>10052011001</ogr:ID>
+    <ogr:NameHH>Manuel Jossias</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7537617" lon="32.7405535">
+  <extensions>
+    <ogr:ID>10050602201</ogr:ID>
+  </extensions>
+</wpt>
+<wpt lat="-25.7549052" lon="32.7374498">
+  <extensions>
+    <ogr:ID>10054102213</ogr:ID>
+    <ogr:NameHH>Nirza Lima</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7544776" lon="32.7404445">
+  <extensions>
+    <ogr:ID>10050703316</ogr:ID>
+    <ogr:NameHH>Joaquim Omar</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7548433" lon="32.7382417">
+  <extensions>
+    <ogr:ID>10052011400</ogr:ID>
+    <ogr:NameHH>Manuel Jossias</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7549433" lon="32.7378133">
+  <extensions>
+    <ogr:ID>10054004402</ogr:ID>
+    <ogr:NameHH>Helia ngonevene</ogr:NameHH>
+  </extensions>
+</wpt>
+<wpt lat="-25.7532567" lon="32.7403317">
+  <extensions>
+    <ogr:ID>10051802203</ogr:ID>
+    <ogr:NameHH>LUÍS FERREIRA </ogr:NameHH>
+  </extensions>
+</wpt>
+</gpx>

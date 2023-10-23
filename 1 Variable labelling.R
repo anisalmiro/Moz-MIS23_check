@@ -1,58 +1,70 @@
 
-# Swap out some numbers for words
-fever <- fever %>%
-  mutate(seek_tx = case_when(fever_treatment == 1 ~ "Sim",
-                             fever_treatment == 0 ~ "Não",
-                             fever_treatment == 8 ~ "Não sabe",
-                             TRUE ~ as.character(fever_treatment)),
-         loc_tx = case_when(treatment_place == 1 ~ "Hospital central",
-                            treatment_place == 2 ~ "Hospital provincial",
-                            treatment_place == 3 ~ "Hospital distrital/rural",
-                            treatment_place == 4 ~ "Centro/posto de saúde",
-                            treatment_place == 5 ~ "Brigadas moveis",
-                            treatment_place == 6 ~ "Farmácia",
-                            treatment_place == 7 ~ "APE",
-                            treatment_place == 8 ~ "Hospital/clinica privada",
-                            treatment_place == 9 ~ "Farmácia privada",
-                            treatment_place == 10 ~ "Médico privado",
-                            treatment_place == 11 ~ "Mercado/dumba nengue",
-                            treatment_place == 12 ~ "Médico trad",
-                            treatment_place == 13 ~ "Amigos/parentes",
-                            treatment_place == 96 ~ "Outro",
-                            TRUE ~ as.character(treatment_place)),
-         loc_tx = fct_expand(loc_tx, "Hospital central", "Hospital provincial", "Hospital distrital/rural", "Centro/posto de saúde", "Brigadas moveis", "Farmácia", "APE", "Hospital/clinica privada", "Farmácia privada", "Médico privado", "Mercado/dumba nengue", "Médico trad", "Amigos/parentes", "Outro"),
-         why_notx = case_when(no_treatment_reason == 1 ~ "Não estava disponível",
-                              no_treatment_reason == 2 ~ "É caro demais",
-                              no_treatment_reason == 3 ~ "É muito distante",
-                              no_treatment_reason == 4 ~ "Não havia transporte",
-                              no_treatment_reason == 5 ~ "Tinha muito trabalho",
-                              no_treatment_reason == 6 ~ "A febre não era grave",
-                              no_treatment_reason == 7 ~ "Não tinha permissão",
-                              no_treatment_reason == 96 ~ "Outro",
-                              TRUE ~ as.character(no_treatment_reason)),
-         why_notx = fct_expand(why_notx, "Não estava disponível", "É caro demais", "Não havia transporte", "Tinha muito trabalho", "A febre não era grave", "Não tinha permissão", "Outro"),
-         mal_test = case_when(test_malaria == 1 ~ "Sim",
-                              test_malaria == 0 ~ "Não",
-                              test_malaria == 8 ~ "Não sabe",
-                              TRUE ~ as.character(test_malaria)),
-         mal_result = case_when(result_malaria == 1 ~ "Positivo",
-                                result_malaria == 2 ~ "Negativo",
-                                result_malaria == 8 ~ "Não sabe",
-                                TRUE ~ as.character(result_malaria)),
-         meds_yn = case_when(medication == 1 ~ "Sim",
-                             medication == 0 ~ "Não",
-                             medication == 8 ~ "Não sabe",
-                             TRUE ~ as.character(result_malaria)))
-
-
-
-
-
-
-
 #--- Label variables
 # haven::zap_labels() can be used to drop labels
 # haven::as_factor() can be used to convert labelled variables to factors
+
+#--- Fever data
+
+# Deal with select multiple
+# Separate multiple choice var; this is janky AF there must be a better way...
+fevexp = fever %>% mutate(medication_type = strsplit(medication_type, " ")) %>% 
+  unnest(medication_type) %>% # Split up using space as seperator 
+  mutate(medication_type = paste0("med_", medication_type),  # Add med_ prefix so var names won't cause pain
+         medication_type = fct_expand(medication_type, "med_1", "med_2", "med_3", "med_4", "med_5", "med_6", "med_7", "med_8", "med_9", "med_10", "med_11", "med_12", "med_13", "med_14", "med_96", "med_98", "med_NA"), # add all factor levels (even ones that aren't in the data)
+         count = 1) %>% # Create a count var that indicates that response was present in the data
+  select(id, medication_type, count) %>% # Select only relevant vars
+  complete(id, medication_type) %>% # Now add in rows for empty levels
+  replace(is.na(.), 0) %>% # Replace NAs with 0
+  pivot_wider(names_from = medication_type, values_from = count) %>% # Pivot wider
+  select(id, med_1, med_2, med_3, med_4, med_5, med_6, med_7, med_8, med_9, med_10, med_11, med_12, med_13, med_14, med_96, med_98) # Can drop the NA here
+
+# 1	= Artemisinin-based combination therapy (tca/coartem)
+# 2	=	Sp/fansidar
+# 3	=	Chloroquine
+# 4	=	Amodiaquine
+# 5	=	Quinine met
+# 6	=	Quinine injection/iv
+# 7	=	Suppository artesunate
+# 8	=	Artesunate injection/iv
+# 9	=	Another anti-malarial
+# 10 =	Antibiotics pill/syrup
+# 11	=	Injection/iv antibiotics
+# 12	=	Other Aspirin Medications
+# 13	=	Other paracetemol medicines
+# 14	=	Other ibuprofen medications
+# 96	=	Other
+# 98	=	Do not know
+
+# Add back into data  
+fever <- left_join(fever, fevexp, by = "id")
+# Remove the temp stuff
+rm(fevexp)
+
+# Add labels
+
+fever$fever_treatment <- labelled(fever$fever_treatment,
+                                  c(`Yes` = 0, `No` = 1, `Don't know` = 8),
+                                  label = "Did you seek advice or treatment for fever?")
+
+fever$treatment_place <- labelled(fever$treatment_place,
+                                  c(`Central hospital` = 1, `Provincial hospital` = 2, `District/rural hospital` = 3, `Health center/post` = 4, `Mobile brigades` = 5, `Pharmacy` = 6, `Community Health Worker (CHW)` = 7, `Hospital/private clinic` = 8, `Private pharmacy` = 9, `Private doctor` = 10, `Market/dumba nengue` = 11, `Traditional doctor` = 12, `Friends/relatives` = 13, `Other` = 96),
+                                  label = "Where did you first seek treatment?")
+
+fever$no_treatment_reason <- labelled(fever$no_treatment_reason,
+                                      c(`Was not available` = 1, `It's too expensive` = 2, `It's too far away` = 3, `There was no transport` = 4, `I had a lot of work` = 5, `The fever was not serious` = 6, `I didn't have permission` = 7, `Other` = 96),
+                                      label = "Why didn't you seek advice or treatment?")
+
+fever$test_malaria <- labelled(fever$test_malaria,
+                               c(`No` = 0, `Yes` = 1, `Don't know` = 8),
+                               label = "Tested for malaria?")
+
+fever$result_malaria <- labelled(fever$result_malaria,
+                                 c(`Positive` = 1, `Negative` = 2, `Don't know` = 8),
+                                 label = "Malaria test outcome")
+
+fever$medication <- labelled(fever$medication,
+                             c(`No` = 0, `Yes` = 1, `Don't know` = 8),
+                             label = "Took medicine for fever or malaria in past 2 weeks")
 
 
 #--- Women's data
@@ -391,9 +403,6 @@ women$sympt_98 <- labelled(women$sympt_98,
                            c(`Não` = 0, `Sim` = 1),
                            label = "Didn't know mal sign")
 
-women$mal_catch <- labelled(women$mal_catch,
-                            c(`Picada de mosquito` = 1, `Pulgas/piolhos/percevejos` = 2, `Ingestão de alimentos contaminados` = 3, `Beber água suja` = 4, `Lixo/sujidade nas proximidades da casa` = 5, `Feitiço` = 6, `Higiene pessoal deficiente` = 7, `Outro` = 96, `Não sabe` = 98))
-
 
 women$prev_1 <- labelled(women$prev_1,
                          c(`Não` = 0, `Sim` = 1),
@@ -694,7 +703,13 @@ women$mal_images_g_mal_im_logo <- labelled(women$mal_images_g_mal_im_logo,
                                            c(`Não` = 0, `Sim` = 1),
                                            label = "Seen fake logo")
 
+women$mal_affirm_mal_affirm_1 <- labelled(women$mal_affirm_mal_affirm_1,
+                                          c(`Agree` = 1, `Disagree` = 2, `Don't know` = 3),
+                                          label = "Possibility of getting malaria is the same whether I sleep inside or outside a mosquito net")
 
+women$mal_affirm_mal_affirm_2 <- labelled(women$mal_affirm_mal_affirm_2,
+                                         c(`Agree` = 1, `Disagree` = 2, `Don't know` = 3),
+                                         label = "Drugs given to pregnant women to prevent malaria work well to ensure the health of the mother and baby")
 
 
 

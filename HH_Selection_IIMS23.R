@@ -89,10 +89,14 @@ listed <- ruODK::odata_submission_get(wkt=TRUE) %>%
   rename_with(.fn = ~ tolower(gsub("g2_id_", "", .x, fixed = TRUE)), .col = starts_with("g2_id_")) %>% 
   rename_with(.fn = ~ tolower(gsub("details_g_", "", .x, fixed = TRUE)), .col = starts_with("details_g_")) %>% 
   clean_names() %>% 
-  filter(start_survey>"2023-10-07") # throw out any previous records from pre-testing phase
+  filter(start_survey>"2023-09-26") # throw out any previous records from pre-testing phase
 
 # Quick check to see how many of each EA we have in the dataset - helpful in case someone entered EA wrongly:
 listed %>% count(area)
+
+# Export listed file for summary table
+write.csv(listed, "raw/listed.csv", row.names = FALSE)
+
 
 #---- Set cluster number and team for which you are doing the selection ----
 cluster <- "100501" # enter this as a string.

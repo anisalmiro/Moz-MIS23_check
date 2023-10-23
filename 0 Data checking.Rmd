@@ -29,14 +29,14 @@ knitr::opts_chunk$set(echo = TRUE)
 #--- Read in the raw data dumped into the "raw" folder by the script that pulls from the ODK server
 # It is set up this way to avoid having to pull from the server every time we knit
 
-hh <- read.csv(here("pratica/raw/hh.csv"))
-hhm <- read.csv(here("pratica/raw/hhm.csv"))
-women <- read.csv(here("pratica/raw/women.csv"))
-births <- read.csv(here("pratica/raw/births.csv"))
+hh <- read.csv(here("raw/hh.csv"))
+hhm <- read.csv(here("raw/hhm.csv"))
+women <- read.csv(here("raw/women.csv"))
+births <- read.csv(here("raw/births.csv"))
 #birthcheck <- read.csv(here("pratica/raw/birthcheck.csv"))
-fever <- read.csv(here("pratica/raw/fever.csv"))
-biomarkers <- read.csv(here("pratica/raw/biomarkers.csv"))
-nets <- read.csv(here("pratica/raw/nets.csv"))
+fever <- read.csv(here("raw/fever.csv"))
+biomarkers <- read.csv(here("raw/biomarkers.csv"))
+nets <- read.csv(here("raw/nets.csv"))
 
 # Set up small dataframe with hh details to add to other datasets
 tb <- hh %>% select(id, surveyor_id, area, local, hh_nb, hh_id_field, date_today) %>%
@@ -91,6 +91,9 @@ hh %>% tabyl(final_comments)
 
 #----- Household Member Checks ----
 
+# Join with hh details
+hhm <- left_join(hhm, tb, by = "submissions_id")
+
 hhm %>% tabyl(sex)
 hhm %>% tabyl(live)
 hhm %>% tabyl(age) # maybe an age pyramid? Check for 98s
@@ -99,49 +102,14 @@ hhm %>% tabyl(travel)
 
 ```
 
-
 # Fever
 
 ```{r fevars}
 #fever <- read.csv(here("raw/fever.csv"))
 # Join with hh details
 fever <- left_join(fever, tb, by = "submissions_id")
-# Remove Sunrise data
+# Remove testing data
 fever <- fever %>% filter(date_today > as.Date("2023-10-02"))
-
-# Separate multiple choice var; this is janky AF there must be a better way...
-fevexp = fever %>% mutate(medication_type = strsplit(medication_type, " ")) %>% 
-  unnest(medication_type) %>% # Split up using space as seperator 
-  mutate(medication_type = paste0("med_", medication_type),  # Add med_ prefix so var names won't cause pain
-         medication_type = fct_expand(medication_type, "med_1", "med_2", "med_3", "med_4", "med_5", "med_6", "med_7", "med_8", "med_9", "med_10", "med_11", "med_12", "med_13", "med_14", "med_96", "med_98", "med_NA"), # add all factor levels (even ones that aren't in the data)
-         count = 1) %>% # Create a count var that indicates that response was present in the data
-  select(id, medication_type, count) %>% # Select only relevant vars
-  complete(id, medication_type) %>% # Now add in rows for empty levels
-  replace(is.na(.), 0) %>% # Replace NAs with 0
-  pivot_wider(names_from = medication_type, values_from = count) %>% # Pivot wider
-  select(id, med_1, med_2, med_3, med_4, med_5, med_6, med_7, med_8, med_9, med_10, med_11, med_12, med_13, med_14, med_96, med_98) # Can drop the NA here
-
-# 1	= Artemisinin-based combination therapy (tca/coartem)
-# 2	=	Sp/fansidar
-# 3	=	Chloroquine
-# 4	=	Amodiaquine
-# 5	=	Quinine met
-# 6	=	Quinine injection/iv
-# 7	=	Suppository artesunate
-# 8	=	Artesunate injection/iv
-# 9	=	Another anti-malarial
-# 10 =	Antibiotics pill/syrup
-# 11	=	Injection/iv antibiotics
-# 12	=	Other Aspirin Medications
-# 13	=	Other paracetemol medicines
-# 14	=	Other ibuprofen medications
-# 96	=	Other
-# 98	=	Do not know
-
-# Add back into data  
-fever <- left_join(fever, fevexp, by = "id")
-# Remove the temp stuff
-rm(fevexp)
 
 ```
 
@@ -149,6 +117,7 @@ rm(fevexp)
 #--- Data quality check
 # If sought treatment, location of treatment
 fever %>% tabyl(fever_treatment, treatment_place)
+#expss::cross_cases(fever, fever_treatment, treatment_place)
 # Did they have a malaria test if they didn't seek treatment?
 fever %>% tabyl(fever_treatment, test_malaria)
 # If tested for malaria, is there a result?
@@ -236,7 +205,7 @@ notxoth <- fever %>% tabyl(no_treat_reason_other) %>%
   select(no_treat_reason_other, n) %>%
   rename(Razão = no_treat_reason_other)
 
-flextable(notx) %>%
+flextable(notxoth) %>%
   set_caption(caption = "Porque não procurou conselho ou tratamento?")
 
 ```
@@ -281,28 +250,7 @@ ggplot(postest, aes(x = result_malaria, y = percent, fill = result_malaria)) +
 
 # What medication did people report taking? 
 
-```{r meds}
-# Select just unique id and meds result
-meds <- fever %>% select(id, med_1, med_2, med_3, med_4, med_5, med_6, med_7, med_8, med_9, med_10, med_11, med_12, med_13, med_14, med_96, med_98) %>%
-  pivot_longer(!id, names_to = "medication", values_to = "count") %>%
-  mutate(medication = case_when(medication == "med_1" ~ "Artemisinin-based combination therapy (tca/coartem)",
-                                medication == "med_2" ~ "Sp/fansidar",
-                                medication == "med_3" ~ "Chloroquine",
-                                medication == "med_4" ~ "Amodiaquine",
-                                medication == "med_5" ~ "Quinine met",
-                                medication == "med_6" ~ "Quinine injection/iv",
-                                medication == "med_7" ~ "Suppository artesunate",
-                                medication == "med_8" ~ "Artesunate injection/iv",
-                                medication == "med_9" ~ "Another anti-malarial",
-                                medication == "med_10" ~ "Antibiotics pill/syrup",
-                                medication == "med_11" ~ "Injection/iv antibiotics",
-                                medication == "med_12" ~ "Other Aspirin Medications",
-                                medication == "med_13" ~ "Other paracetemol medicines",
-                                medication == "med_14" ~ "Other ibuprofen medications",
-                                medication == "med_96" ~ "Other",
-                                medication == "med_98" ~ "Do not know"))
-
-
+```{r meds, eval = FALSE}
 ## Trying to get percentages for numbers
 meds <- meds %>% group_by(medication) %>%
   summarize(Mean = mean(count, na.rm=TRUE))
@@ -330,10 +278,10 @@ women <- left_join(women, tb, by = "submissions_id")
 
 ```{r netcheck}
 # Check net brands for missing
-nets %>% tabyl(brand_g_net_brand)
+nets %>% tabyl(net_brand)
 
 # Check % of nets observed 
-nets %>% tabyl(statecolorshape_g_net_state)
+nets %>% tabyl(net_state)
 
 # Check % of nets used last night
 nets %>% tabyl(sleep_net)
@@ -343,7 +291,7 @@ nets %>% tabyl(no_sleep_net)
 
 # Check if interviewer put in 1234 for net users:
 nets_check <- nets %>% 
-  mutate(netusers1234=case_when(net_users_g_user1_nb==1 & net_users_g_user2_nb==2 & net_users_g_user3_nb==3 & net_users_g_user4_nb==4 ~ "wrong",
+  mutate(netusers1234=case_when(user1_nb==1 & user2_nb==2 & user3_nb==3 & user4_nb==4 ~ "wrong",
          TRUE ~ "right"))
 nets_check %>% tabyl(netusers1234)
 
@@ -354,6 +302,77 @@ nets %>%
   tabyl(count)
 
 ```
+
+
+```{r sampling}
+# Create table of sampling by area as requested by Anisio
+# Area ID, Number of AF listed, Number of AF visited, Number of kids tested, Number of women
+
+# NB: Listed file will have all households even if they fall outside of the enumeration area as those are dropped later in the listing process
+listed <- read.csv(here("raw/listed.csv"))
+# Number of households listed by area (cluster)
+listed <- listed %>% tabyl(area) %>%
+  rename(Listed_AF = n) %>%
+  select(area, Listed_AF)
+
+# Number of households sampled by area
+sampled <- hh %>% tabyl(area) %>%
+  rename(Sampled_AF = n) %>%
+  select(area, Sampled_AF)
+
+# Number of u5s
+uf <- hhm %>% filter(under_5 == 1) %>%
+  tabyl(area) %>%
+  rename(Under5_n = n) %>%
+  select(area, Under5_n)
+
+# Number of eligible women
+eligw <- hhm %>% filter(w_btw_15_49 == 1) %>%
+  tabyl(area) %>%
+  rename(Eligw_n = n) %>%
+  select(area, Eligw_n)
+
+# There's definitely a better way to do this but it'll do for now
+
+# Combine listed and sampled, keep all rows even if area doesn't match up
+amostra <- full_join(listed, sampled, by = "area") %>%
+  full_join(uf, by = "area") %>%
+  full_join(eligw, by = "area") %>%
+  arrange(area)
+
+# Write to Excel and make it pretty
+# Add column headers requested by Anisio
+amostra <- amostra %>% rename(`ID` = area,
+                              `Número de AFs Listados` = Listed_AF,
+                              `Número de AFs Visitados` = Sampled_AF,
+                              `Número de Crianças 6-59 meses testadas` = Under5_n,
+                              `Número de Mulheres de 15-49 anos entrevistadas` = Eligw_n)
+
+## Create a new workbook
+wb <- createWorkbook()
+
+## Add a worksheet
+addWorksheet(wb, "overview")
+
+## set column widths
+setColWidths(wb, 1, cols = 1:5, widths = c(15, 25, 25, 25, 25))
+
+## write the data
+writeData(wb, sheet = 1, x = amostra)
+
+## Set the styles and textwrap
+bodyStyle <- createStyle(fontSize=12, border="TopBottomLeftRight", borderColour = "black" , wrapText=TRUE)
+headerStyle <- createStyle(fontSize=14, border="TopBottomLeftRight", borderColour = "black", wrapText=TRUE, textDecoration="bold", fgFill="darkgray")
+
+addStyle(wb, sheet = 1, bodyStyle, rows = 1:nrow(amostra)+1, cols = 1:5, gridExpand = TRUE)
+addStyle(wb, sheet = 1, headerStyle, rows = 1, cols = 1:5, gridExpand = TRUE)
+
+## Save workbook in the "Selected" folder
+saveWorkbook(wb, "Sampling summary.xlsx", overwrite = TRUE) 
+
+
+```
+
 
 
 
