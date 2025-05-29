@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-26.019163360999983" minlon="32.555995520000067" maxlat="-26.010208470999942" maxlon="32.563980340000057"/></metadata>                
+<rte>
+  <name>29753</name>
+  <cmt>43947</cmt>
+  <desc>1</desc>
+  <src>11</src>
+  <link href="Maputo Cidade"><text>06</text><type>Katembe</type></link>
+  <link href="99"><text>Nao Aplicavel</text><type>99</type></link>
+  <number>0</number>
+  <type>01</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>16.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>0.0</ogr:Area_Geogr>
+    <ogr:CodProv>99</ogr:CodProv>
+    <ogr:Provincia>Nao Aplicavel</ogr:Provincia>
+    <ogr:CodDist>99</ogr:CodDist>
+    <ogr:Distrito>Nao Aplicavel</ogr:Distrito>
+    <ogr:CodPost>1106999901004</ogr:CodPost>
+    <ogr:Posto>004</ogr:Posto>
+    <ogr:CodLocal>004</ogr:CodLocal>
+    <ogr:Localidade>02</ogr:Localidade>
+    <ogr:CodBairro>0.0255246169345</ogr:CodBairro>
+    <ogr:Bairro>1106</ogr:Bairro>
+    <ogr:CodN1>0.0255246169345</ogr:CodN1>
+    <ogr:NomeN1>2.5342242003e-05</ogr:NomeN1>
+    <ogr:CodN2>540</ogr:CodN2>
+    <ogr:NomeN2>110601</ogr:NomeN2>
+    <ogr:CodN3>1106999901004</ogr:CodN3>
+  </extensions>
+  <rtept lat="-26.010426611999947" lon="32.560312974000055">
+  </rtept>
+  <rtept lat="-26.01045075199994" lon="32.560363944000073">
+  </rtept>
+  <rtept lat="-26.010501839999961" lon="32.56036729300007">
+  </rtept>
+  <rtept lat="-26.012065592999932" lon="32.56094575000003">
+  </rtept>
+  <rtept lat="-26.013150938999956" lon="32.56141909300004">
+  </rtept>
+  <rtept lat="-26.013921482999933" lon="32.561750192000034">
+  </rtept>
+  <rtept lat="-26.014661168999965" lon="32.562068031000024">
+  </rtept>
+  <rtept lat="-26.015748600999927" lon="32.562545431000046">
+  </rtept>
+  <rtept lat="-26.017257941999958" lon="32.563208054000029">
+  </rtept>
+  <rtept lat="-26.017284098999937" lon="32.563219538000055">
+  </rtept>
+  <rtept lat="-26.017823729999975" lon="32.563488033000056">
+  </rtept>
+  <rtept lat="-26.01834450399997" lon="32.563684686000045">
+  </rtept>
+  <rtept lat="-26.018720625999947" lon="32.563826716000051">
+  </rtept>
+  <rtept lat="-26.019127450999974" lon="32.563980340000057">
+  </rtept>
+  <rtept lat="-26.019163360999983" lon="32.563923432000024">
+  </rtept>
+  <rtept lat="-26.015778036999961" lon="32.559242588000075">
+  </rtept>
+  <rtept lat="-26.014906245999953" lon="32.55816599800005">
+  </rtept>
+  <rtept lat="-26.014403404999939" lon="32.557545032000064">
+  </rtept>
+  <rtept lat="-26.014102702999935" lon="32.557000651000067">
+  </rtept>
+  <rtept lat="-26.013764831999936" lon="32.556533926000043">
+  </rtept>
+  <rtept lat="-26.013629585999979" lon="32.555995520000067">
+  </rtept>
+  <rtept lat="-26.013256911999974" lon="32.556134973000042">
+  </rtept>
+  <rtept lat="-26.01269085499996" lon="32.556619442000056">
+  </rtept>
+  <rtept lat="-26.01211518599996" lon="32.55744472400005">
+  </rtept>
+  <rtept lat="-26.011810587999946" lon="32.558026596000047">
+  </rtept>
+  <rtept lat="-26.011699946999954" lon="32.558259277000047">
+  </rtept>
+  <rtept lat="-26.011716709999973" lon="32.558470501000045">
+  </rtept>
+  <rtept lat="-26.011615538999934" lon="32.558556883000051">
+  </rtept>
+  <rtept lat="-26.011670944999935" lon="32.558611988000052">
+  </rtept>
+  <rtept lat="-26.011700049999945" lon="32.558657593000078">
+  </rtept>
+  <rtept lat="-26.010822696999981" lon="32.559401060000027">
+  </rtept>
+  <rtept lat="-26.010645417999967" lon="32.559373707000077">
+  </rtept>
+  <rtept lat="-26.010282231999952" lon="32.559393013000033">
+  </rtept>
+  <rtept lat="-26.010326505999956" lon="32.559634635000066">
+  </rtept>
+  <rtept lat="-26.010208470999942" lon="32.560147049000079">
+  </rtept>
+  <rtept lat="-26.010426611999947" lon="32.560312974000055">
+  </rtept>
+</rte>
+</gpx>

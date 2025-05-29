@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.914448982999943" minlon="32.601127903000076" maxlat="-25.913092287999973" maxlon="32.603999789000056"/></metadata>                
+<rte>
+  <name>29891</name>
+  <cmt>44189</cmt>
+  <desc>1</desc>
+  <src>11</src>
+  <link href="Maputo Cidade"><text>04</text><type>KaMavota</type></link>
+  <link href="99"><text>Nao Aplicavel</text><type>99</type></link>
+  <number>0</number>
+  <type>03</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>75.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>0.0</ogr:Area_Geogr>
+    <ogr:CodProv>99</ogr:CodProv>
+    <ogr:Provincia>Nao Aplicavel</ogr:Provincia>
+    <ogr:CodDist>99</ogr:CodDist>
+    <ogr:Distrito>Nao Aplicavel</ogr:Distrito>
+    <ogr:CodPost>1104999903038</ogr:CodPost>
+    <ogr:Posto>038</ogr:Posto>
+    <ogr:CodLocal>038</ogr:CodLocal>
+    <ogr:Localidade>17</ogr:Localidade>
+    <ogr:CodBairro>0.00739912850045</ogr:CodBairro>
+    <ogr:Bairro>1104</ogr:Bairro>
+    <ogr:CodN1>0.00739912850045</ogr:CodN1>
+    <ogr:NomeN1>1.56451044835e-06</ogr:NomeN1>
+    <ogr:CodN2>495</ogr:CodN2>
+    <ogr:NomeN2>110408</ogr:NomeN2>
+    <ogr:CodN3>1104999903038</ogr:CodN3>
+  </extensions>
+  <rtept lat="-25.913190561999954" lon="32.601482943000065">
+  </rtept>
+  <rtept lat="-25.913191487999939" lon="32.601819844000033">
+  </rtept>
+  <rtept lat="-25.913123844999973" lon="32.60218880900004">
+  </rtept>
+  <rtept lat="-25.913192131999949" lon="32.602199728000073">
+  </rtept>
+  <rtept lat="-25.913488516999962" lon="32.602270639000039">
+  </rtept>
+  <rtept lat="-25.913743828999941" lon="32.602419166000061">
+  </rtept>
+  <rtept lat="-25.914018587999976" lon="32.602780091000056">
+  </rtept>
+  <rtept lat="-25.914058287999978" lon="32.603341340000043">
+  </rtept>
+  <rtept lat="-25.914043416999959" lon="32.603808310000034">
+  </rtept>
+  <rtept lat="-25.914041435999934" lon="32.603866735000054">
+  </rtept>
+  <rtept lat="-25.914037479999934" lon="32.603983413000037">
+  </rtept>
+  <rtept lat="-25.914152233999971" lon="32.603984852000053">
+  </rtept>
+  <rtept lat="-25.914222754999969" lon="32.60398996300006">
+  </rtept>
+  <rtept lat="-25.914265604999969" lon="32.603993540000033">
+  </rtept>
+  <rtept lat="-25.914340455999934" lon="32.603999789000056">
+  </rtept>
+  <rtept lat="-25.914389537999966" lon="32.603993766000031">
+  </rtept>
+  <rtept lat="-25.914439628999958" lon="32.603987620000055">
+  </rtept>
+  <rtept lat="-25.914448982999943" lon="32.60398325500006">
+  </rtept>
+  <rtept lat="-25.914397909999934" lon="32.603531450000048">
+  </rtept>
+  <rtept lat="-25.914391341999931" lon="32.603473345000054">
+  </rtept>
+  <rtept lat="-25.914181116999941" lon="32.601613658000076">
+  </rtept>
+  <rtept lat="-25.914030036999975" lon="32.601546257000052">
+  </rtept>
+  <rtept lat="-25.913195955999981" lon="32.601174152000056">
+  </rtept>
+  <rtept lat="-25.913092287999973" lon="32.601127903000076">
+  </rtept>
+  <rtept lat="-25.913190561999954" lon="32.601482943000065">
+  </rtept>
+</rte>
+</gpx>

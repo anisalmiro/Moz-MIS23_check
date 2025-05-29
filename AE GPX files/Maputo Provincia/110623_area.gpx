@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-26.044345200999938" minlon="32.592197938000027" maxlat="-26.036183314999963" maxlon="32.610354962000031"/></metadata>                
+<rte>
+  <name>110623</name>
+  <extensions>
+  </extensions>
+  <rtept lat="-26.036183314999963" lon="32.609029897000035">
+  </rtept>
+  <rtept lat="-26.036214188999963" lon="32.596546879000073">
+  </rtept>
+  <rtept lat="-26.036990757999948" lon="32.593131385000049">
+  </rtept>
+  <rtept lat="-26.04067937099995" lon="32.592197938000027">
+  </rtept>
+  <rtept lat="-26.041064207999966" lon="32.592492175000082">
+  </rtept>
+  <rtept lat="-26.044345200999938" lon="32.594015775000052">
+  </rtept>
+  <rtept lat="-26.043849284999968" lon="32.595199212000068">
+  </rtept>
+  <rtept lat="-26.043489033999951" lon="32.596536707000041">
+  </rtept>
+  <rtept lat="-26.043467618999959" lon="32.598092875000077">
+  </rtept>
+  <rtept lat="-26.043298715999981" lon="32.599096245000055">
+  </rtept>
+  <rtept lat="-26.042859428999975" lon="32.600816644000076">
+  </rtept>
+  <rtept lat="-26.042954606999956" lon="32.60154237900008">
+  </rtept>
+  <rtept lat="-26.04250250999997" lon="32.601768428000071">
+  </rtept>
+  <rtept lat="-26.041645903999949" lon="32.602303807000055">
+  </rtept>
+  <rtept lat="-26.040624479999966" lon="32.603419298000063">
+  </rtept>
+  <rtept lat="-26.040766877999943" lon="32.604845895000039">
+  </rtept>
+  <rtept lat="-26.040957604999964" lon="32.60560840200003">
+  </rtept>
+  <rtept lat="-26.040515420999956" lon="32.607793307000065">
+  </rtept>
+  <rtept lat="-26.039000012999967" lon="32.610354962000031">
+  </rtept>
+  <rtept lat="-26.037286656999981" lon="32.609425886000054">
+  </rtept>
+  <rtept lat="-26.036183314999963" lon="32.609029897000035">
+  </rtept>
+</rte>
+</gpx>

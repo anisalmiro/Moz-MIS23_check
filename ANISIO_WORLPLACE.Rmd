@@ -1,0 +1,59 @@
+---
+title: "ANISIO_WORKPLACE"
+author: "Anisio"
+date: "2023-11-16"
+output: html_document
+---
+
+```{r}
+
+listed %>% dplyr::filter(province==10)%>% count(area)
+
+
+AE_PROV<-listed %>%distinct(province,district,area) %>% select(province,district,area) 
+ 
+
+AE_PROV$Provincia_nome <- plyr::revalue(AE_PROV$province, 
+                                   c("9"="Gaza",
+                                     "10"="Maputo Provincia",
+                                     "11"="Maputo Cidade"))
+AE_PROV$Dist_nome <- plyr::revalue(AE_PROV$district, 
+                                   c("901"="Cidade de Xai-Xai",
+                                     "902"="Bilene",
+                                     "903"="Chibuto",
+                                     "904"="Chicualacuala",
+                                     "905"="Chigubo",
+                                     "906"="Chokwe",
+                                     "907"="Guija",
+                                     "908"="Mabalane",
+                                     "909"="Mandlakaze",
+                                     "910"="Massangena",
+                                     "911"="Massingir",
+                                     "912"="Limpopo",
+                                     "913"="Chongoene",
+                                     "914"="Mapai",
+                                     "1001"="Matola",
+                                     "1002"="Boane",
+                                     "1003"="Magude",
+                                     "1004"="Manhiça",
+                                     "1005"="Marracuene",
+                                     "1006"="Matutuine",
+                                     "1007"="Moamba",
+                                     "1008"="Namaacha",
+                                     "1101"="Kampfumo",
+                                     "1102"="Nlhamankulu",
+                                     "1103"="Kamaxaquene",
+                                     "1104"="Kamavota",
+                                     "1105"="Kamubukwana",
+                                     "1106"="Katembe",
+                                     "1107"="Kanyaka"))
+
+AE_TERMINADAS<-AE_PROV %>% select(Provincia_nome,Dist_nome,area)
+
+
+
+
+writexl::write_xlsx(AE_TERMINADAS, "QOS/Areas_feitas.xlsx")
+view(AE_TERMINADAS)
+
+```

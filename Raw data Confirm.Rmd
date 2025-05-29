@@ -1,0 +1,39 @@
+---
+title: "Raw_Confirm"
+author: "Anisio"
+date: "2023-11-04"
+output: html_document
+---
+
+```{r}
+
+cluster <- paste0("100315")
+# Create in all the AEs and filter by cluster number
+ae <- st_read("shp files/LIMITE_INTERNO_DE_AE.shp")%>% 
+dplyr::filter(IMRS_ID == cluster)
+
+ae <- ae %>% 
+  group_by(IMRS_ID) %>%
+  dplyr::summarise(geometry = sf::st_union(geometry)) %>%
+  ungroup()
+
+# Convert polygon to linestring as GPX doesn't support polygones
+ae <- st_cast(ae, "LINESTRING")
+# Write as GPX file with cluster number as prefix
+st_write(ae, paste0("AE GPX files/", cluster,"_area.gpx"), layer = "track_points", driver = "GPX", dataset_options = "GPX_USE_EXTENSIONS=yes", append = FALSE)
+
+
+
+```
+
+
+
+listed %>% count(area)
+
+view(filtered %>% dplyr:::select(province,district,area,ea_calc,visit_result))
+
+filtered %>% count(visit_result)
+```
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.141828121999939" minlon="32.559243599000069" maxlat="-25.118307922999975" maxlon="32.580464486000039"/></metadata>                
+<rte>
+  <name>100304</name>
+  <extensions>
+  </extensions>
+  <rtept lat="-25.118307922999975" lon="32.579006667000044">
+  </rtept>
+  <rtept lat="-25.124630743999948" lon="32.569477929000072">
+  </rtept>
+  <rtept lat="-25.130391491999941" lon="32.56591499700005">
+  </rtept>
+  <rtept lat="-25.139028092999975" lon="32.559243599000069">
+  </rtept>
+  <rtept lat="-25.139465451999968" lon="32.562432756000078">
+  </rtept>
+  <rtept lat="-25.140117423999982" lon="32.56446957400005">
+  </rtept>
+  <rtept lat="-25.141828121999939" lon="32.570601251000028">
+  </rtept>
+  <rtept lat="-25.128905582999945" lon="32.580464486000039">
+  </rtept>
+  <rtept lat="-25.118307922999975" lon="32.579006667000044">
+  </rtept>
+</rte>
+</gpx>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.7.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<bounds minlat="-25.960648210999977" minlon="32.565486962000080" maxlat="-25.958655880999970" maxlon="32.567815574000065"/>                                     
+</metadata>
+<rte>
+  <name>110103</name>
+  <extensions>
+  </extensions>
+  <rtept lat="-25.95865588099997" lon="32.566353295000056">
+  </rtept>
+  <rtept lat="-25.959048887999931" lon="32.566061256000069">
+  </rtept>
+  <rtept lat="-25.959307233999937" lon="32.565869282000058">
+  </rtept>
+  <rtept lat="-25.959821728999941" lon="32.56548696200008">
+  </rtept>
+  <rtept lat="-25.96025461499994" lon="32.566280085000074">
+  </rtept>
+  <rtept lat="-25.960301683999941" lon="32.566366324000057">
+  </rtept>
+  <rtept lat="-25.960648210999977" lon="32.567001234000031">
+  </rtept>
+  <rtept lat="-25.96022400499993" lon="32.567287988000032">
+  </rtept>
+  <rtept lat="-25.959470632999967" lon="32.567815574000065">
+  </rtept>
+  <rtept lat="-25.959096289999934" lon="32.567164528000042">
+  </rtept>
+  <rtept lat="-25.958825399999967" lon="32.56666554800006">
+  </rtept>
+  <rtept lat="-25.95865588099997" lon="32.566353295000056">
+  </rtept>
+</rte>
+</gpx>

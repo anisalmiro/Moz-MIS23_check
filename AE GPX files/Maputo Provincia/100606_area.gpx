@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-26.530821903999936" minlon="32.505468157000053" maxlat="-26.472893960999954" maxlon="32.604909036000038"/></metadata>                
+<rte>
+  <name>56091</name>
+  <cmt>70484</cmt>
+  <desc>2</desc>
+  <src>10</src>
+  <link href="Maputo Provincia"><text>06</text><type>Matutuine</type></link>
+  <link href="01"><text>Bela Vista</text><type>04</type></link>
+  <number>0</number>
+  <type>99</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>1.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>0.0</ogr:Area_Geogr>
+    <ogr:CodProv>99</ogr:CodProv>
+    <ogr:Provincia>Nao Aplicavel</ogr:Provincia>
+    <ogr:CodPost>1006010499005</ogr:CodPost>
+    <ogr:Posto>005</ogr:Posto>
+    <ogr:CodLocal>005</ogr:CodLocal>
+    <ogr:Localidade>02</ogr:Localidade>
+    <ogr:CodBairro>0.259987994083</ogr:CodBairro>
+    <ogr:Bairro>1006</ogr:Bairro>
+    <ogr:CodN1>0.259987994083</ogr:CodN1>
+    <ogr:NomeN1>0.00262876070071</ogr:NomeN1>
+    <ogr:CodN2>362</ogr:CodN2>
+    <ogr:NomeN2>100606</ogr:NomeN2>
+    <ogr:CodN3>1006010499005</ogr:CodN3>
+  </extensions>
+  <rtept lat="-26.487182570999948" lon="32.571337779000032">
+  </rtept>
+  <rtept lat="-26.488400854999952" lon="32.575144917000046">
+  </rtept>
+  <rtept lat="-26.487563283999975" lon="32.575392380000039">
+  </rtept>
+  <rtept lat="-26.488324711999951" lon="32.578133520000051">
+  </rtept>
+  <rtept lat="-26.488572175999934" lon="32.578514233000078">
+  </rtept>
+  <rtept lat="-26.488819639999974" lon="32.578723626000055">
+  </rtept>
+  <rtept lat="-26.488933853999981" lon="32.579199518000053">
+  </rtept>
+  <rtept lat="-26.489124210999933" lon="32.579865767000058">
+  </rtept>
+  <rtept lat="-26.48921938899997" lon="32.580417802000056">
+  </rtept>
+  <rtept lat="-26.489923709999971" lon="32.583634833000076">
+  </rtept>
+  <rtept lat="-26.491275243999951" lon="32.588584112000035">
+  </rtept>
+  <rtept lat="-26.492112813999938" lon="32.591763072000049">
+  </rtept>
+  <rtept lat="-26.492396056999951" lon="32.594302678000076">
+  </rtept>
+  <rtept lat="-26.492834991999928" lon="32.59451765600005">
+  </rtept>
+  <rtept lat="-26.496094618999962" lon="32.597052408000025">
+  </rtept>
+  <rtept lat="-26.497653727999932" lon="32.600257975000034">
+  </rtept>
+  <rtept lat="-26.499915888999965" lon="32.604909036000038">
+  </rtept>
+  <rtept lat="-26.501270507999948" lon="32.604653351000024">
+  </rtept>
+  <rtept lat="-26.501987170999939" lon="32.604518081000037">
+  </rtept>
+  <rtept lat="-26.504562205999946" lon="32.598942545000057">
+  </rtept>
+  <rtept lat="-26.506452213999978" lon="32.595480692000024">
+  </rtept>
+  <rtept lat="-26.511796025999956" lon="32.592006573000049">
+  </rtept>
+  <rtept lat="-26.514200076999941" lon="32.587198775000047">
+  </rtept>
+  <rtept lat="-26.517749822999974" lon="32.585607137000068">
+  </rtept>
+  <rtept lat="-26.514363163999974" lon="32.569282811000051">
+  </rtept>
+  <rtept lat="-26.507984637999982" lon="32.548097712000072">
+  </rtept>
+  <rtept lat="-26.530821903999936" lon="32.505468157000053">
+  </rtept>
+  <rtept lat="-26.478555030999928" lon="32.524272773000064">
+  </rtept>
+  <rtept lat="-26.472893960999954" lon="32.53095965600005">
+  </rtept>
+  <rtept lat="-26.487182570999948" lon="32.571337779000032">
+  </rtept>
+</rte>
+</gpx>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-26.049953996999932" minlon="32.565838112000051" maxlat="-26.039277029999937" maxlon="32.587355861000056"/></metadata>                
+<rte>
+  <name>110624</name>
+  <extensions>
+  </extensions>
+  <rtept lat="-26.039277029999937" lon="32.582994684000028">
+  </rtept>
+  <rtept lat="-26.04053954099993" lon="32.580142121000051">
+  </rtept>
+  <rtept lat="-26.040937420999967" lon="32.578236058000073">
+  </rtept>
+  <rtept lat="-26.041322893999961" lon="32.577074881000044">
+  </rtept>
+  <rtept lat="-26.041606502999969" lon="32.576130018000079">
+  </rtept>
+  <rtept lat="-26.041821966999972" lon="32.575463230000025">
+  </rtept>
+  <rtept lat="-26.043267858999968" lon="32.57098869400005">
+  </rtept>
+  <rtept lat="-26.044686109999933" lon="32.565838112000051">
+  </rtept>
+  <rtept lat="-26.044786115999951" lon="32.565894985000057">
+  </rtept>
+  <rtept lat="-26.048146239999937" lon="32.566620639000064">
+  </rtept>
+  <rtept lat="-26.049953996999932" lon="32.567350745000056">
+  </rtept>
+  <rtept lat="-26.049821748999936" lon="32.56854431700004">
+  </rtept>
+  <rtept lat="-26.049560613999972" lon="32.570901118000059">
+  </rtept>
+  <rtept lat="-26.049219840999971" lon="32.573976670000043">
+  </rtept>
+  <rtept lat="-26.049030014999971" lon="32.575689888000056">
+  </rtept>
+  <rtept lat="-26.048851280999941" lon="32.576828437000074">
+  </rtept>
+  <rtept lat="-26.048439008999935" lon="32.57792095800005">
+  </rtept>
+  <rtept lat="-26.047501733999979" lon="32.579696216000059">
+  </rtept>
+  <rtept lat="-26.047022150999961" lon="32.580557285000054">
+  </rtept>
+  <rtept lat="-26.047051894999985" lon="32.581776759000036">
+  </rtept>
+  <rtept lat="-26.04648677299997" lon="32.583353152000029">
+  </rtept>
+  <rtept lat="-26.046427285999982" lon="32.585554153000032">
+  </rtept>
+  <rtept lat="-26.044777840999931" lon="32.587355861000056">
+  </rtept>
+  <rtept lat="-26.044722618999966" lon="32.587129550000043">
+  </rtept>
+  <rtept lat="-26.044629574999931" lon="32.586731217000079">
+  </rtept>
+  <rtept lat="-26.043752047999931" lon="32.584457733000079">
+  </rtept>
+  <rtept lat="-26.043520016999938" lon="32.583856589000057">
+  </rtept>
+  <rtept lat="-26.043506701999945" lon="32.582702751000056">
+  </rtept>
+  <rtept lat="-26.039724593999946" lon="32.582876244000033">
+  </rtept>
+  <rtept lat="-26.039589387999964" lon="32.582925039000031">
+  </rtept>
+  <rtept lat="-26.039277029999937" lon="32.582994684000028">
+  </rtept>
+</rte>
+</gpx>

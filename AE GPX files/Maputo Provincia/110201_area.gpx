@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.933813640999972" minlon="32.566490461000058" maxlat="-25.932160101999955" maxlon="32.568529623000074"/></metadata>                
+<rte>
+  <name>27564</name>
+  <cmt>41640</cmt>
+  <desc>1</desc>
+  <src>11</src>
+  <link href="Maputo Cidade"><text>02</text><type>Nlhamankulu</type></link>
+  <link href="99"><text>Nao Aplicavel</text><type>99</type></link>
+  <number>0</number>
+  <type>01</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>24.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>0.0</ogr:Area_Geogr>
+    <ogr:CodProv>99</ogr:CodProv>
+    <ogr:Provincia>Nao Aplicavel</ogr:Provincia>
+    <ogr:CodDist>99</ogr:CodDist>
+    <ogr:Distrito>Nao Aplicavel</ogr:Distrito>
+    <ogr:CodPost>1102999901001</ogr:CodPost>
+    <ogr:Posto>001</ogr:Posto>
+    <ogr:CodLocal>001</ogr:CodLocal>
+    <ogr:Localidade>01</ogr:Localidade>
+    <ogr:CodBairro>0.00343990017709</ogr:CodBairro>
+    <ogr:Bairro>1102</ogr:Bairro>
+    <ogr:CodN1>0.00343990017709</ogr:CodN1>
+    <ogr:NomeN1>6.73599966527e-07</ogr:NomeN1>
+    <ogr:CodN2>436</ogr:CodN2>
+    <ogr:NomeN2>110201</ogr:NomeN2>
+    <ogr:CodN3>1102999901001</ogr:CodN3>
+  </extensions>
+  <rtept lat="-25.933399598999983" lon="32.568233753000072">
+  </rtept>
+  <rtept lat="-25.933407605999946" lon="32.568046658000071">
+  </rtept>
+  <rtept lat="-25.933433324999953" lon="32.567857202000027">
+  </rtept>
+  <rtept lat="-25.93342072799993" lon="32.567715317000079">
+  </rtept>
+  <rtept lat="-25.933301596999968" lon="32.567655262000073">
+  </rtept>
+  <rtept lat="-25.933037396999964" lon="32.567528216000028">
+  </rtept>
+  <rtept lat="-25.93293545399996" lon="32.567480579000062">
+  </rtept>
+  <rtept lat="-25.932830650999961" lon="32.567514794000033">
+  </rtept>
+  <rtept lat="-25.932727476999958" lon="32.567779763000033">
+  </rtept>
+  <rtept lat="-25.932589158999974" lon="32.567982655000037">
+  </rtept>
+  <rtept lat="-25.932492076999949" lon="32.567967427000042">
+  </rtept>
+  <rtept lat="-25.932419963999962" lon="32.568032694000067">
+  </rtept>
+  <rtept lat="-25.932474068999966" lon="32.568249829000024">
+  </rtept>
+  <rtept lat="-25.932431238999982" lon="32.568454463000023">
+  </rtept>
+  <rtept lat="-25.932681565999928" lon="32.568529623000074">
+  </rtept>
+  <rtept lat="-25.932742585999961" lon="32.568481511000073">
+  </rtept>
+  <rtept lat="-25.932859917999963" lon="32.568464112000072">
+  </rtept>
+  <rtept lat="-25.932935201999953" lon="32.56844949200007">
+  </rtept>
+  <rtept lat="-25.932962526999972" lon="32.568397860000061">
+  </rtept>
+  <rtept lat="-25.933003760999952" lon="32.568290113000046">
+  </rtept>
+  <rtept lat="-25.93307307699996" lon="32.568269706000024">
+  </rtept>
+  <rtept lat="-25.933214689999943" lon="32.568270707000067">
+  </rtept>
+  <rtept lat="-25.933345015999976" lon="32.568252700000073">
+  </rtept>
+  <rtept lat="-25.933399598999983" lon="32.568233753000072">
+  </rtept>
+</rte>
+<rte>
+  <name>27566</name>
+  <cmt>41642</cmt>
+  <desc>1</desc>
+  <src>11</src>
+  <link href="Maputo Cidade"><text>02</text><type>Nlhamankulu</type></link>
+  <link href="99"><text>Nao Aplicavel</text><type>99</type></link>
+  <number>0</number>
+  <type>01</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>25.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>0.0</ogr:Area_Geogr>
+    <ogr:CodProv>99</ogr:CodProv>
+    <ogr:Provincia>Nao Aplicavel</ogr:Provincia>
+    <ogr:CodDist>99</ogr:CodDist>
+    <ogr:Distrito>Nao Aplicavel</ogr:Distrito>
+    <ogr:CodPost>1102999901001</ogr:CodPost>
+    <ogr:Posto>001</ogr:Posto>
+    <ogr:CodLocal>001</ogr:CodLocal>
+    <ogr:Localidade>01</ogr:Localidade>
+    <ogr:CodBairro>0.00551467663043</ogr:CodBairro>
+    <ogr:Bairro>1102</ogr:Bairro>
+    <ogr:CodN1>0.00551467663043</ogr:CodN1>
+    <ogr:NomeN1>1.41393661546e-06</ogr:NomeN1>
+    <ogr:CodN2>436</ogr:CodN2>
+    <ogr:NomeN2>110201</ogr:NomeN2>
+    <ogr:CodN3>1102999901001</ogr:CodN3>
+  </extensions>
+  <rtept lat="-25.933466148999969" lon="32.567626133000033">
+  </rtept>
+  <rtept lat="-25.933586140999978" lon="32.567668969000067">
+  </rtept>
+  <rtept lat="-25.933771715999967" lon="32.567620187000045">
+  </rtept>
+  <rtept lat="-25.933813640999972" lon="32.567600526000035">
+  </rtept>
+  <rtept lat="-25.933720899999969" lon="32.567361467000069">
+  </rtept>
+  <rtept lat="-25.933697432999963" lon="32.56725493700003">
+  </rtept>
+  <rtept lat="-25.933612257999982" lon="32.567101997000066">
+  </rtept>
+  <rtept lat="-25.933580517999928" lon="32.567023261000031">
+  </rtept>
+  <rtept lat="-25.933577767999964" lon="32.567016440000032">
+  </rtept>
+  <rtept lat="-25.933578465999972" lon="32.567016397000032">
+  </rtept>
+  <rtept lat="-25.933564065999974" lon="32.566981654000074">
+  </rtept>
+  <rtept lat="-25.933541468999977" lon="32.566926394000063">
+  </rtept>
+  <rtept lat="-25.933539536999945" lon="32.566921670000056">
+  </rtept>
+  <rtept lat="-25.933528731999957" lon="32.566895246000058">
+  </rtept>
+  <rtept lat="-25.933474516999979" lon="32.56676266900007">
+  </rtept>
+  <rtept lat="-25.933446404999984" lon="32.566742884000064">
+  </rtept>
+  <rtept lat="-25.933370430999958" lon="32.566689414000052">
+  </rtept>
+  <rtept lat="-25.933135505999928" lon="32.566694676000054">
+  </rtept>
+  <rtept lat="-25.932633830999976" lon="32.566531956000063">
+  </rtept>
+  <rtept lat="-25.932601169999941" lon="32.566519120000066">
+  </rtept>
+  <rtept lat="-25.932528245999947" lon="32.566490461000058">
+  </rtept>
+  <rtept lat="-25.932515659999979" lon="32.566539773000045">
+  </rtept>
+  <rtept lat="-25.932160101999955" lon="32.567918838000026">
+  </rtept>
+  <rtept lat="-25.932253541999955" lon="32.567933435000043">
+  </rtept>
+  <rtept lat="-25.932419963999962" lon="32.568032694000067">
+  </rtept>
+  <rtept lat="-25.932492076999949" lon="32.567967427000042">
+  </rtept>
+  <rtept lat="-25.932589158999974" lon="32.567982655000037">
+  </rtept>
+  <rtept lat="-25.932727476999958" lon="32.567779763000033">
+  </rtept>
+  <rtept lat="-25.932830650999961" lon="32.567514794000033">
+  </rtept>
+  <rtept lat="-25.93293545399996" lon="32.567480579000062">
+  </rtept>
+  <rtept lat="-25.933037396999964" lon="32.567528216000028">
+  </rtept>
+  <rtept lat="-25.933301596999968" lon="32.567655262000073">
+  </rtept>
+  <rtept lat="-25.93342072799993" lon="32.567715317000079">
+  </rtept>
+  <rtept lat="-25.933466148999969" lon="32.567626133000033">
+  </rtept>
+</rte>
+</gpx>

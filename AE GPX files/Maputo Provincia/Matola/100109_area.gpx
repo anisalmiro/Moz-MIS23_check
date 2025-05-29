@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.7.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<bounds minlat="-25.834454549999975" minlon="32.528369667000050" maxlat="-25.829844670999933" maxlon="32.530130136000025"/>                                     
+</metadata>
+<rte>
+  <name>100109</name>
+  <extensions>
+  </extensions>
+  <rtept lat="-25.829844670999933" lon="32.528678392000081">
+  </rtept>
+  <rtept lat="-25.830479990999944" lon="32.528617797000031">
+  </rtept>
+  <rtept lat="-25.831110617999968" lon="32.528583620000063">
+  </rtept>
+  <rtept lat="-25.831741496999939" lon="32.52854575300006">
+  </rtept>
+  <rtept lat="-25.831769897999948" lon="32.528544048000072">
+  </rtept>
+  <rtept lat="-25.83305484899995" lon="32.528464597000038">
+  </rtept>
+  <rtept lat="-25.833718906999938" lon="32.528425005000031">
+  </rtept>
+  <rtept lat="-25.834359022999937" lon="32.52836966700005">
+  </rtept>
+  <rtept lat="-25.834408568999951" lon="32.529128044000061">
+  </rtept>
+  <rtept lat="-25.834454549999975" lon="32.529831871000056">
+  </rtept>
+  <rtept lat="-25.834435439999936" lon="32.529833406000087">
+  </rtept>
+  <rtept lat="-25.833140852999975" lon="32.529937382000071">
+  </rtept>
+  <rtept lat="-25.831820728999958" lon="32.529973271000074">
+  </rtept>
+  <rtept lat="-25.831191790999981" lon="32.530040560000032">
+  </rtept>
+  <rtept lat="-25.829937543999961" lon="32.530128921000021">
+  </rtept>
+  <rtept lat="-25.82992029199994" lon="32.530130136000025">
+  </rtept>
+  <rtept lat="-25.829893251999977" lon="32.52981693400006">
+  </rtept>
+  <rtept lat="-25.82988417099995" lon="32.529711746000032">
+  </rtept>
+  <rtept lat="-25.829890104999947" lon="32.529427955000074">
+  </rtept>
+  <rtept lat="-25.829844670999933" lon="32.528678392000081">
+  </rtept>
+</rte>
+</gpx>

@@ -47,8 +47,10 @@ hhraw <- ruODK::odata_submission_get(
 hhmraw <- ruODK::odata_submission_get(
   table = fq_svc$name[2], 
   local_dir = loc
-)
+) #Base complementar HH
 
+
+  
 netsraw <- ruODK::odata_submission_get(
   table = fq_svc$name[3], 
   local_dir = loc,
@@ -165,6 +167,15 @@ biomarkers <- biomarkersraw %>% #remove_empty(which="cols", quiet=FALSE) %>%
   rename_with(.fn = ~ tolower(gsub("symptoms_g_", "", .x, fixed = TRUE)), .col = starts_with("symptoms_g_"))
   
 
+# Filter out the data that is not relevant for the analysis
+hh <- hh %>% 
+  filter(end_survey > "2023-11-01",
+         start_survey > "2023-11-01")
+
+hhm <- hhm %>% 
+  filter(end_survey > "2023-11-01",
+         start_survey > "2023-11-01")
+
 # Make a list with the df names:
 dfs <- list(hh = hh, hhm = hhm, nets = nets, women = women, births = births, birthcheck = birthcheck, fever = fever, biomarkers = biomarkers)
 
@@ -173,6 +184,12 @@ dataframe_list <- lapply(dfs, as.data.frame)
 
 # Export csv copies of the raw data
 walk2(dataframe_list, paste0("raw/", names(dataframe_list), ".csv"), write_csv)
+
+# look for especific id columns where ==uuid:00196a8e-827d-4697-9944-8e05857ffb61
+data_lookup <- hhmraw %>% dplyr::filter(id == "uuid:00196a8e-827d-4697-9944-8e05857ffb61")
+view(data_lookup)
+
+
 
 
 

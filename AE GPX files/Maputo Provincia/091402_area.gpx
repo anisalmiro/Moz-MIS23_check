@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-22.673853768999948" minlon="32.034925594000072" maxlat="-22.479943891999937" maxlon="32.181810564000045"/></metadata>                
+<rte>
+  <name>22827</name>
+  <cmt>23084</cmt>
+  <desc>2</desc>
+  <src>09</src>
+  <link href="Gaza"><text>14</text><type>Mapai</type></link>
+  <link href="01"><text>Mapai</text><type>01</type></link>
+  <number>16</number>
+  <type>99</type>
+  <extensions>
+    <ogr:OBJECTID_1>0.0</ogr:OBJECTID_1>
+    <ogr:OBJECTID>3.0</ogr:OBJECTID>
+    <ogr:Area_Geogr>16.0</ogr:Area_Geogr>
+    <ogr:CodProv>08</ogr:CodProv>
+    <ogr:Provincia>Marrave</ogr:Provincia>
+    <ogr:CodPost>0914010199030</ogr:CodPost>
+    <ogr:Posto>030</ogr:Posto>
+    <ogr:CodLocal>030</ogr:CodLocal>
+    <ogr:Localidade>03</ogr:Localidade>
+    <ogr:CodBairro>0.510029849385</ogr:CodBairro>
+    <ogr:Bairro>0914</ogr:Bairro>
+    <ogr:CodN1>0.510029849385</ogr:CodN1>
+    <ogr:NomeN1>0.0163052396985</ogr:NomeN1>
+    <ogr:CodN2>251</ogr:CodN2>
+    <ogr:NomeN2>091402</ogr:NomeN2>
+    <ogr:CodN3>0914010199030</ogr:CodN3>
+  </extensions>
+  <rtept lat="-22.526102760999947" lon="32.15923945600008">
+  </rtept>
+  <rtept lat="-22.598412306999933" lon="32.181810564000045">
+  </rtept>
+  <rtept lat="-22.625365918999933" lon="32.141256248000047">
+  </rtept>
+  <rtept lat="-22.640107050999973" lon="32.119076790000065">
+  </rtept>
+  <rtept lat="-22.673853768999948" lon="32.085650863000069">
+  </rtept>
+  <rtept lat="-22.610590769999931" lon="32.056196584000077">
+  </rtept>
+  <rtept lat="-22.544460267999966" lon="32.034925594000072">
+  </rtept>
+  <rtept lat="-22.49977826199995" lon="32.090719335000074">
+  </rtept>
+  <rtept lat="-22.479943891999937" lon="32.135150346000046">
+  </rtept>
+  <rtept lat="-22.526102760999947" lon="32.15923945600008">
+  </rtept>
+</rte>
+</gpx>

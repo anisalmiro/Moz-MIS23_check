@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-25.935506400000001" minlon="32.606922800000000" maxlat="-25.934398000000002" maxlon="32.608386299999999"/></metadata>                
+<wpt lat="-25.9351467" lon="32.6071397">
+  <ele>11034004424.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.935177" lon="32.6070841">
+  <ele>11034004425.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9349825" lon="32.608188">
+  <ele>11034002216.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9348844" lon="32.607574">
+  <ele>11034004408.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9348794" lon="32.6071863">
+  <ele>11034004406.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.934398" lon="32.6081586">
+  <ele>11034004417.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9347539" lon="32.6070069">
+  <ele>11034004403.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9350246" lon="32.6069653">
+  <ele>11034001106.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9345252" lon="32.607492">
+  <ele>11034001100.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9349068" lon="32.6074041">
+  <ele>11034002207.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.934746" lon="32.6078302">
+  <ele>11034004411.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9344554" lon="32.6082909">
+  <ele>11034004415.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9349535" lon="32.6082113">
+  <ele>11034002217.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9348695" lon="32.6083856">
+  <ele>11034002215.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9352123" lon="32.6074527">
+  <ele>11034004422.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9348478" lon="32.6076063">
+  <ele>11034004409.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9347547" lon="32.6083863">
+  <ele>11034001117.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9346367" lon="32.6080084">
+  <ele>11034004413.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9347355" lon="32.6079193">
+  <ele>11034004412.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9349784" lon="32.6069875">
+  <ele>11034004404.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9347991" lon="32.6069697">
+  <ele>11034004405.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9355064" lon="32.607119">
+  <ele>11034002222.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9349268" lon="32.6083266">
+  <ele>11034003300.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9351816" lon="32.6069228">
+  <ele>11034001123.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+<wpt lat="-25.9347487" lon="32.6077044">
+  <ele>11034004410.0</ele>
+  <extensions>
+  </extensions>
+</wpt>
+</gpx>

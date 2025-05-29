@@ -19,9 +19,13 @@ library(flextable)
 library(officer)
 library(labelled)
 library(haven)
+library(purrr)
+library(haven)
+library(readr)
 
 #---- Knitr options
 knitr::opts_chunk$set(echo = TRUE)
+
 
 ```
 
@@ -37,6 +41,147 @@ births <- read.csv(here("raw/births.csv"))
 fever <- read.csv(here("raw/fever.csv"))
 biomarkers <- read.csv(here("raw/biomarkers.csv"))
 nets <- read.csv(here("raw/nets.csv"))
+
+amostras<- read.csv(here("raw/amostras_malaria.csv"))
+
+
+
+```
+
+
+
+# Extra analisys reharding relation hh and chaldren
+
+```{r hhcheck}
+
+
+#unir base do HH e da e HHM 
+hh_hhm <- left_join(hh, hhm, by = c("id" = "submissions_id"))
+
+
+# filtrar onde o relation =1
+hh_hhm_1 <- hh_hhm %>% 
+  filter(relation == 1)
+
+hh_hhm_2 <- hh_hhm_1 %>% 
+  select(id, relation, sex, sleep, age,live, age_m, hhh, hh_nb, hh_id_field)
+
+# unir a base hh_hhm com a base hh_null_sex_idade
+
+base_final <- right_join(hh_hhm_2, hh_null_sex_idade, by = c("id" = "submissions_id"))
+
+
+base_final_1 <- right_join(hh_hhm_2, base_rachis, by = c("id" = "submissions_id"))
+
+write_dta(base_final_1, here("raw/base_criancas_e_hh.dta"))
+
+
+
+
+
+```
+
+
+
+
+
+```{r netcheck}
+
+#-------------------------------------------------------------------------------
+#CRIANCAS COM MALARIA POSITIVO
+hh_hhm<- left_join(hh, hhm, by = c("id" = "submissions_id"))
+hhm_biomarker<- inner_join(hhm, biomarkers, by = c("submissions_id" = "submissions_id"))
+hhm_woman<- inner_join(hhm, women, by = c("submissions_id" = "submissions_id"))
+woman_fever<- inner_join(women, fever, by = c("submissions_id" = "submissions_id"))
+
+
+dfs <- list(hh_hhm = hh_hhm, hhm_biomarker = hhm_biomarker, hhm_woman = hhm_woman, woman_fever = woman_fever)
+dfs <- list(hh = hh, hhm = hhm, nets = nets, women = women, births = births, fever = fever, biomarkers = biomarkers)
+# Make all of them dataframes instead of tibbles:
+dataframe_list <- lapply(dfs, as.data.frame)
+
+# Export csv copies of the raw data
+walk2(dataframe_list, paste0("raw/", names(dataframe_list), ".csv"), write_csv)
+
+Malaria_p<- Malaria_teste %>% 
+  filter(end_survey > "2023-11-01",
+         start_survey > "2023-11-01")
+
+
+
+Malaria_p_gaza<- Malaria_p %>% 
+  filter(malaria_result == 1)
+
+#remover Duplicado baseandose na variavel name_child_biom
+Malaria_p_gaza<-Malaria_p_gaza %>% distinct(name_child_biom, .keep_all = TRUE)
+
+
+View(Malaria_p_gaza)
+
+malar_pos_gaza_last <- Malaria_p_gaza %>% 
+  filter(end_survey > "2024-01-01",
+         start_survey > "2024-01-01")
+dim(malar_pos_gaza_last)
+view(malar_pos_gaza_last)
+
+view(Malaria_p_gaza %>% select(name_child_biom, tdr_malaria))
+write.csv(malar_pos_gaza_last, here("raw/Malaria_pos_gaza_last.csv"))
+
+#selecionar provincia 9
+Malaria_p_gaza<- Malaria_p_gaza %>% 
+  filter(province == 9)
+view(Malaria_p_gaza)
+dim(Malaria_p_gaza)
+
+
+
+
+Malaria_maputo<- Malaria_p %>% 
+  filter(province == 10)
+Malaria_maputo<- Malaria_maputo %>% 
+  filter(tdr_malaria == 1)
+
+Malaria_mcidade<- Malaria_p %>% 
+  filter(province == 11)
+
+Malaria_mcidade<- Malaria_mcidade %>% 
+  filter(tdr_malaria == 1)
+
+dim(Malaria_p_gaza)
+dim(Malaria_maputo)
+dim(Malaria_mcidade)
+dim(fever)
+
+view(Malaria_p_gaza %>% select(name_child_biom, tdr_malaria))
+
+#exportar base de gaza positivos
+write.csv(Malaria_p_gaza, here("raw/Malaria_posit_Gaza.csv"))
+
+# get surveyor start date
+hh_join_check <- hh_join_check %>% 
+  filter(end_survey > "2023-11-01",
+         start_survey > "2023-11-01")
+
+str(Malaria_p_gaza)
+
+# Write data to csv
+write.csv(hh_join_check, here("raw/hh_join_check.csv"))
+
+#-------------------------------------------------------------------------------
+
+dim(hh)
+dim(women)
+
+#combine hh and woman by submission id
+db_hh_woman<- left_join(hh,women, by = c("id" = "submissions_id"))
+
+dim(db_hh_woman)
+view(db_hh_woman)
+
+```
+
+```{r setup}
+
 
 # Set up small dataframe with hh details to add to other datasets
 tb <- hh %>% select(id, surveyor_id, area, local, hh_nb, hh_id_field, date_today) %>%
@@ -278,6 +423,11 @@ hist(women$preg_spf_nb)
 ```
 
 
+
+
+
+
+
 # Biomarkers
 
 # Range of reported hemoglobin
@@ -378,6 +528,10 @@ addStyle(wb, sheet = 1, headerStyle, rows = 1, cols = 1:5, gridExpand = TRUE)
 ## Save workbook in the "Selected" folder
 saveWorkbook(wb, "Sampling summary.xlsx", overwrite = TRUE) 
 
+
+
+
+testes_malaria<-c()
 
 ```
 
